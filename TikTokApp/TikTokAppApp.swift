@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct TikTokAppApp: App {
+    @EnvironmentObject var vm: ViewModel
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
+                .environmentObject(ViewModel())
+                .environmentObject(VideosManager())
+                .environmentObject(MusicManager())
         }
     }
 }

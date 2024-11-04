@@ -6,33 +6,370 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXFileReference section */
-		12500D1E2CBEA2C50030C1B5 /* TikTokApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTokApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		02A01E352CD91B78007676A6 /* PreviewNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A01E342CD91B78007676A6 /* PreviewNotifications.swift */; };
+		120B705F2CBF9C0B004C531B /* SupportUsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B705E2CBF9C0B004C531B /* SupportUsSection.swift */; };
+		120B70612CBF9CC5004C531B /* SettingsShareLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70602CBF9CC5004C531B /* SettingsShareLink.swift */; };
+		120B70632CBF9E6E004C531B /* InfoAndLegalSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70622CBF9E6E004C531B /* InfoAndLegalSection.swift */; };
+		120B70672CBFA12B004C531B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70652CBFA12B004C531B /* MainTabView.swift */; };
+		120B70682CBFA12B004C531B /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70662CBFA12B004C531B /* LaunchScreen.swift */; };
+		120B70692CBFA12B004C531B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70642CBFA12B004C531B /* StartView.swift */; };
+		120B70712CBFA153004C531B /* LogoAndAdvantages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B706E2CBFA153004C531B /* LogoAndAdvantages.swift */; };
+		120B70722CBFA153004C531B /* PrivacyPolicyLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B706B2CBFA153004C531B /* PrivacyPolicyLinks.swift */; };
+		120B70732CBFA153004C531B /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B706A2CBFA153004C531B /* PaywallView.swift */; };
+		120B70742CBFA153004C531B /* SubscriptionsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B706D2CBFA153004C531B /* SubscriptionsOptions.swift */; };
+		120B70752CBFA153004C531B /* SubscriptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B706C2CBFA153004C531B /* SubscriptionButton.swift */; };
+		120B707A2CBFA281004C531B /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70792CBFA281004C531B /* TrendsView.swift */; };
+		120B707C2CBFA29B004C531B /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B707B2CBFA29B004C531B /* SavedView.swift */; };
+		120B707E2CBFA325004C531B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B707D2CBFA325004C531B /* MainView.swift */; };
+		120B70802CBFA9B0004C531B /* PaywallBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B707F2CBFA9B0004C531B /* PaywallBackground.swift */; };
+		120B70822CBFAD64004C531B /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70812CBFAD64004C531B /* CloseButton.swift */; };
+		120B70852CBFB0BB004C531B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70842CBFB0B2004C531B /* Label.swift */; };
+		120B708A2CBFD993004C531B /* RateMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70892CBFD993004C531B /* RateMeView.swift */; };
+		120B708C2CBFDD43004C531B /* CapsuleEmptyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B708B2CBFDD43004C531B /* CapsuleEmptyButton.swift */; };
+		120B708E2CBFDFE6004C531B /* LinkField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B708D2CBFDFE6004C531B /* LinkField.swift */; };
+		120B70A22CBFF099004C531B /* PasteOrXButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70A12CBFF099004C531B /* PasteOrXButtonView.swift */; };
+		122CEF212CD4AD0A005A146F /* VideoFolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF202CD4AD03005A146F /* VideoFolderModel.swift */; };
+		122CEF232CD4B33E005A146F /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF222CD4B33E005A146F /* CardLabel.swift */; };
+		122CEF252CD4BBCD005A146F /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF242CD4BBC5005A146F /* MusicManager.swift */; };
+		122CEF272CD4BCB3005A146F /* MusicFolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF262CD4BCB1005A146F /* MusicFolderModel.swift */; };
+		122CEF2A2CD4DBB3005A146F /* MusicGridElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF292CD4DBB3005A146F /* MusicGridElement.swift */; };
+		122CEF2C2CD4DD4A005A146F /* MusicGridElementLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF2B2CD4DD4A005A146F /* MusicGridElementLabel.swift */; };
+		122CEF2E2CD4DF4A005A146F /* MusicFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF2D2CD4DF4A005A146F /* MusicFolderView.swift */; };
+		122CEF312CD4E17A005A146F /* TrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF302CD4E17A005A146F /* TrackList.swift */; };
+		122CEF332CD4E224005A146F /* NoMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF322CD4E224005A146F /* NoMusicView.swift */; };
+		122CEF352CD4E56F005A146F /* TrackListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF342CD4E56F005A146F /* TrackListRow.swift */; };
+		122CEF372CD4F0D6005A146F /* PlaylistLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF362CD4F0D6005A146F /* PlaylistLabel.swift */; };
+		122CEF3A2CD4F241005A146F /* PlaylistGridElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF392CD4F241005A146F /* PlaylistGridElement.swift */; };
+		122CEF3C2CD512EB005A146F /* NoVideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF3B2CD512EB005A146F /* NoVideosView.swift */; };
+		1237D4F52CCF6C190060DC5A /* NewfolderAllertbody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237D4F42CCF6C190060DC5A /* NewfolderAllertbody.swift */; };
+		1237D4F72CCFC24B0060DC5A /* BackgroundMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237D4F62CCFC24B0060DC5A /* BackgroundMainView.swift */; };
+		1237D4F92CCFC2CB0060DC5A /* TitleMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237D4F82CCFC2CB0060DC5A /* TitleMainView.swift */; };
+		1237D4FB2CCFC3760060DC5A /* DownloadingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237D4FA2CCFC3760060DC5A /* DownloadingProgressView.swift */; };
+		1237D4FD2CCFC3E20060DC5A /* LinkFieldMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237D4FC2CCFC3E20060DC5A /* LinkFieldMainView.swift */; };
+		1237D5002CCFC5810060DC5A /* ShowInstructionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237D4FF2CCFC5810060DC5A /* ShowInstructionsButton.swift */; };
+		123ED4E42CC6402700CE0F88 /* TrendsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4E32CC6402700CE0F88 /* TrendsSection.swift */; };
+		123ED4E62CC6447800CE0F88 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4E52CC6447800CE0F88 /* CardView.swift */; };
+		123ED4E82CC6552200CE0F88 /* OpenSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4E72CC6552200CE0F88 /* OpenSection.swift */; };
+		123ED4EA2CC65D3600CE0F88 /* SmallImageLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4E92CC65D3600CE0F88 /* SmallImageLink.swift */; };
+		123ED4ED2CC6611700CE0F88 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4EC2CC6611700CE0F88 /* AlbumView.swift */; };
+		123ED4EF2CC6684D00CE0F88 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4EE2CC6684D00CE0F88 /* PlayButton.swift */; };
+		123ED4F12CC6695600CE0F88 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4F02CC6695600CE0F88 /* ListRow.swift */; };
+		12500D372CBEA2D40030C1B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12500D302CBEA2D40030C1B5 /* Preview Assets.xcassets */; };
+		12500D382CBEA2D40030C1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12500D322CBEA2D40030C1B5 /* Assets.xcassets */; };
+		12500D3A2CBEA2D40030C1B5 /* TikTokAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D352CBEA2D40030C1B5 /* TikTokAppApp.swift */; };
+		12500D422CBEA3B90030C1B5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D3E2CBEA3B90030C1B5 /* SettingsView.swift */; };
+		12500D432CBEA3B90030C1B5 /* SettingsElementLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D3F2CBEA3B90030C1B5 /* SettingsElementLabel.swift */; };
+		12500D442CBEA3B90030C1B5 /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D402CBEA3B90030C1B5 /* AppVersionView.swift */; };
+		12500D472CBEA3DB0030C1B5 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 12500D462CBEA3DB0030C1B5 /* ApphudSDK */; };
+		12500D492CBEA3F20030C1B5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D482CBEA3ED0030C1B5 /* ViewModel.swift */; };
+		12500D5F2CBEA5090030C1B5 /* AsyncImageGridElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D5A2CBEA5090030C1B5 /* AsyncImageGridElementView.swift */; };
+		12500D602CBEA5090030C1B5 /* VideoGridElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D562CBEA5090030C1B5 /* VideoGridElement.swift */; };
+		12500D612CBEA5090030C1B5 /* SmallImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D512CBEA5090030C1B5 /* SmallImageButton.swift */; };
+		12500D622CBEA5090030C1B5 /* BestOfferBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D532CBEA5090030C1B5 /* BestOfferBadgeView.swift */; };
+		12500D632CBEA5090030C1B5 /* VideoFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D572CBEA5090030C1B5 /* VideoFolderView.swift */; };
+		12500D662CBEA5090030C1B5 /* CapsuleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D522CBEA5090030C1B5 /* CapsuleNotification.swift */; };
+		12500D672CBEA5090030C1B5 /* AsyncImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D592CBEA5090030C1B5 /* AsyncImageGridView.swift */; };
+		12500D682CBEA5090030C1B5 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D5B2CBEA5090030C1B5 /* AsyncImageView.swift */; };
+		12500D692CBEA5090030C1B5 /* ProButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D4B2CBEA5090030C1B5 /* ProButtonView.swift */; };
+		12500D6B2CBEA5090030C1B5 /* VideoGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D552CBEA5090030C1B5 /* VideoGrid.swift */; };
+		12500D6C2CBEA5090030C1B5 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D4D2CBEA5090030C1B5 /* CapsuleButton.swift */; };
+		12500D6D2CBEA5090030C1B5 /* DetailsBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D502CBEA5090030C1B5 /* DetailsBanner.swift */; };
+		12500D712CBEAA1B0030C1B5 /* SettingsPurchasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D702CBEAA1B0030C1B5 /* SettingsPurchasesView.swift */; };
+		12500D752CBEB1EE0030C1B5 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D742CBEB1EE0030C1B5 /* SettingsButton.swift */; };
+		12500D782CBEB8550030C1B5 /* SettingsActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D772CBEB8550030C1B5 /* SettingsActionsView.swift */; };
+		1268D89D2CCA2A4200C3979A /* DownloadLinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1268D89A2CCA2A4200C3979A /* DownloadLinkResponse.swift */; };
+		1268D8A72CCA5A7F00C3979A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1268D8A62CCA5A7F00C3979A /* Alamofire */; };
+		127275222CC7850300800BA3 /* ClipInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275212CC7850300800BA3 /* ClipInfo.swift */; };
+		127275242CC7912900800BA3 /* ClipInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275232CC7911A00800BA3 /* ClipInfoModel.swift */; };
+		127275272CC7BD5B00800BA3 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275262CC7BD5B00800BA3 /* DownloadManager.swift */; };
+		127275472CC7DE4D00800BA3 /* WrongLinkAllert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275462CC7DE4D00800BA3 /* WrongLinkAllert.swift */; };
+		12C177C42CCB8846002346D5 /* TrendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C177C32CCB8839002346D5 /* TrendsModel.swift */; };
+		12C177C62CCB9D4D002346D5 /* SeeAllButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C177C52CCB9D4D002346D5 /* SeeAllButton.swift */; };
+		12C177CC2CCBCCA6002346D5 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C177CB2CCBCC9F002346D5 /* ImageLoader.swift */; };
+		12C90DB52CC0EEE700CEA55B /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DB42CC0EEE700CEA55B /* Instruction.swift */; };
+		12C90DB72CC0EFB300CEA55B /* InstructionTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DB62CC0EFB300CEA55B /* InstructionTemplate.swift */; };
+		12C90DB92CC0F93A00CEA55B /* FourthSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DB82CC0F93A00CEA55B /* FourthSlide.swift */; };
+		12C90DBC2CC0FAD900CEA55B /* PreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DBB2CC0FAD900CEA55B /* PreView.swift */; };
+		12C90DBE2CC0FB8C00CEA55B /* VideoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DBD2CC0FB8C00CEA55B /* VideoPreview.swift */; };
+		12C90DC02CC0FDAC00CEA55B /* MenuElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DBF2CC0FDAC00CEA55B /* MenuElement.swift */; };
+		12C90DC22CC0FEC800CEA55B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DC12CC0FEC800CEA55B /* Menu.swift */; };
+		12C90DC82CC1204400CEA55B /* VideoGridElementLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DC72CC1204400CEA55B /* VideoGridElementLabel.swift */; };
+		12C90DCA2CC1243300CEA55B /* RecentsFolderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DC92CC1243300CEA55B /* RecentsFolderLabel.swift */; };
+		12C90DCD2CC13EBD00CEA55B /* VideoCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DCC2CC13EBD00CEA55B /* VideoCover.swift */; };
+		12C90DCF2CC13F7B00CEA55B /* CoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DCE2CC13F7B00CEA55B /* CoverButton.swift */; };
+		12C90DD22CC151E200CEA55B /* MusicGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DD12CC151E200CEA55B /* MusicGrid.swift */; };
+		12C90DD52CC155D300CEA55B /* FoldersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DD42CC155C900CEA55B /* FoldersManager.swift */; };
+		12E51D072CD269FD002C2A8B /* VideosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E51D062CD269D2002C2A8B /* VideosManager.swift */; };
+		12E51D0B2CD28861002C2A8B /* EllipsisButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E51D0A2CD28861002C2A8B /* EllipsisButton.swift */; };
+		12EC2FC52CC2506B001CFA35 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FC42CC25064001CFA35 /* CacheManager.swift */; };
+		12EC2FE12CC26B30001CFA35 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FE02CC26B1B001CFA35 /* Errors.swift */; };
+		12EC2FE42CC28387001CFA35 /* SelectFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FE32CC28387001CFA35 /* SelectFolder.swift */; };
+		12EC2FE62CC28399001CFA35 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FE52CC28399001CFA35 /* ListElement.swift */; };
+		12EC2FE82CC2895D001CFA35 /* FolderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FE72CC2895D001CFA35 /* FolderList.swift */; };
+		12EC2FEA2CC289E0001CFA35 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FE92CC289E0001CFA35 /* CircleButton.swift */; };
+		12F333D92CD62A68001ECED5 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F333D82CD62A68001ECED5 /* Tips.swift */; };
+		12F334132CD661C2001ECED5 /* LinkFieldOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F334122CD661C2001ECED5 /* LinkFieldOverlay.swift */; };
+		12FA289A2CC8F35B001E6AF7 /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA28992CC8F35B001E6AF7 /* CoverView.swift */; };
+		12FF4DD22CD3B356006C1EF9 /* FolderMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF4DD12CD3B356006C1EF9 /* FolderMenuButton.swift */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		12500D202CBEA2C50030C1B5 /* TikTokApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TikTokApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		02A01E332CD8EA7D007676A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		02A01E342CD91B78007676A6 /* PreviewNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNotifications.swift; sourceTree = "<group>"; };
+		120B705E2CBF9C0B004C531B /* SupportUsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportUsSection.swift; sourceTree = "<group>"; };
+		120B70602CBF9CC5004C531B /* SettingsShareLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsShareLink.swift; sourceTree = "<group>"; };
+		120B70622CBF9E6E004C531B /* InfoAndLegalSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAndLegalSection.swift; sourceTree = "<group>"; };
+		120B70642CBFA12B004C531B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		120B70652CBFA12B004C531B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		120B70662CBFA12B004C531B /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		120B706A2CBFA153004C531B /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		120B706B2CBFA153004C531B /* PrivacyPolicyLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyLinks.swift; sourceTree = "<group>"; };
+		120B706C2CBFA153004C531B /* SubscriptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionButton.swift; sourceTree = "<group>"; };
+		120B706D2CBFA153004C531B /* SubscriptionsOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsOptions.swift; sourceTree = "<group>"; };
+		120B706E2CBFA153004C531B /* LogoAndAdvantages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAndAdvantages.swift; sourceTree = "<group>"; };
+		120B70792CBFA281004C531B /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
+		120B707B2CBFA29B004C531B /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		120B707D2CBFA325004C531B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		120B707F2CBFA9B0004C531B /* PaywallBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallBackground.swift; sourceTree = "<group>"; };
+		120B70812CBFAD64004C531B /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		120B70842CBFB0B2004C531B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		120B70892CBFD993004C531B /* RateMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMeView.swift; sourceTree = "<group>"; };
+		120B708B2CBFDD43004C531B /* CapsuleEmptyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleEmptyButton.swift; sourceTree = "<group>"; };
+		120B708D2CBFDFE6004C531B /* LinkField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkField.swift; sourceTree = "<group>"; };
+		120B70A12CBFF099004C531B /* PasteOrXButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteOrXButtonView.swift; sourceTree = "<group>"; };
+		122CEF202CD4AD03005A146F /* VideoFolderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFolderModel.swift; sourceTree = "<group>"; };
+		122CEF222CD4B33E005A146F /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
+		122CEF242CD4BBC5005A146F /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
+		122CEF262CD4BCB1005A146F /* MusicFolderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFolderModel.swift; sourceTree = "<group>"; };
+		122CEF292CD4DBB3005A146F /* MusicGridElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGridElement.swift; sourceTree = "<group>"; };
+		122CEF2B2CD4DD4A005A146F /* MusicGridElementLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGridElementLabel.swift; sourceTree = "<group>"; };
+		122CEF2D2CD4DF4A005A146F /* MusicFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFolderView.swift; sourceTree = "<group>"; };
+		122CEF302CD4E17A005A146F /* TrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackList.swift; sourceTree = "<group>"; };
+		122CEF322CD4E224005A146F /* NoMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMusicView.swift; sourceTree = "<group>"; };
+		122CEF342CD4E56F005A146F /* TrackListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListRow.swift; sourceTree = "<group>"; };
+		122CEF362CD4F0D6005A146F /* PlaylistLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistLabel.swift; sourceTree = "<group>"; };
+		122CEF392CD4F241005A146F /* PlaylistGridElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistGridElement.swift; sourceTree = "<group>"; };
+		122CEF3B2CD512EB005A146F /* NoVideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoVideosView.swift; sourceTree = "<group>"; };
+		1237D4F42CCF6C190060DC5A /* NewfolderAllertbody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewfolderAllertbody.swift; sourceTree = "<group>"; };
+		1237D4F62CCFC24B0060DC5A /* BackgroundMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMainView.swift; sourceTree = "<group>"; };
+		1237D4F82CCFC2CB0060DC5A /* TitleMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleMainView.swift; sourceTree = "<group>"; };
+		1237D4FA2CCFC3760060DC5A /* DownloadingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingProgressView.swift; sourceTree = "<group>"; };
+		1237D4FC2CCFC3E20060DC5A /* LinkFieldMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFieldMainView.swift; sourceTree = "<group>"; };
+		1237D4FF2CCFC5810060DC5A /* ShowInstructionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInstructionsButton.swift; sourceTree = "<group>"; };
+		123ED4E32CC6402700CE0F88 /* TrendsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsSection.swift; sourceTree = "<group>"; };
+		123ED4E52CC6447800CE0F88 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		123ED4E72CC6552200CE0F88 /* OpenSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSection.swift; sourceTree = "<group>"; };
+		123ED4E92CC65D3600CE0F88 /* SmallImageLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallImageLink.swift; sourceTree = "<group>"; };
+		123ED4EC2CC6611700CE0F88 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		123ED4EE2CC6684D00CE0F88 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		123ED4F02CC6695600CE0F88 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
+		12500D1E2CBEA2C50030C1B5 /* TikTokApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTokApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12500D302CBEA2D40030C1B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		12500D322CBEA2D40030C1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12500D342CBEA2D40030C1B5 /* TikTokApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TikTokApp.entitlements; sourceTree = "<group>"; };
+		12500D352CBEA2D40030C1B5 /* TikTokAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokAppApp.swift; sourceTree = "<group>"; };
+		12500D3E2CBEA3B90030C1B5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		12500D3F2CBEA3B90030C1B5 /* SettingsElementLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsElementLabel.swift; sourceTree = "<group>"; };
+		12500D402CBEA3B90030C1B5 /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
+		12500D482CBEA3ED0030C1B5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		12500D4B2CBEA5090030C1B5 /* ProButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProButtonView.swift; sourceTree = "<group>"; };
+		12500D4D2CBEA5090030C1B5 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
+		12500D502CBEA5090030C1B5 /* DetailsBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBanner.swift; sourceTree = "<group>"; };
+		12500D512CBEA5090030C1B5 /* SmallImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallImageButton.swift; sourceTree = "<group>"; };
+		12500D522CBEA5090030C1B5 /* CapsuleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleNotification.swift; sourceTree = "<group>"; };
+		12500D532CBEA5090030C1B5 /* BestOfferBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestOfferBadgeView.swift; sourceTree = "<group>"; };
+		12500D552CBEA5090030C1B5 /* VideoGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGrid.swift; sourceTree = "<group>"; };
+		12500D562CBEA5090030C1B5 /* VideoGridElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGridElement.swift; sourceTree = "<group>"; };
+		12500D572CBEA5090030C1B5 /* VideoFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFolderView.swift; sourceTree = "<group>"; };
+		12500D592CBEA5090030C1B5 /* AsyncImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageGridView.swift; sourceTree = "<group>"; };
+		12500D5A2CBEA5090030C1B5 /* AsyncImageGridElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageGridElementView.swift; sourceTree = "<group>"; };
+		12500D5B2CBEA5090030C1B5 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		12500D702CBEAA1B0030C1B5 /* SettingsPurchasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPurchasesView.swift; sourceTree = "<group>"; };
+		12500D742CBEB1EE0030C1B5 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		12500D772CBEB8550030C1B5 /* SettingsActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActionsView.swift; sourceTree = "<group>"; };
+		1268D89A2CCA2A4200C3979A /* DownloadLinkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadLinkResponse.swift; sourceTree = "<group>"; };
+		127275212CC7850300800BA3 /* ClipInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipInfo.swift; sourceTree = "<group>"; };
+		127275232CC7911A00800BA3 /* ClipInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipInfoModel.swift; sourceTree = "<group>"; };
+		127275262CC7BD5B00800BA3 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		127275462CC7DE4D00800BA3 /* WrongLinkAllert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongLinkAllert.swift; sourceTree = "<group>"; };
+		12C177C32CCB8839002346D5 /* TrendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsModel.swift; sourceTree = "<group>"; };
+		12C177C52CCB9D4D002346D5 /* SeeAllButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllButton.swift; sourceTree = "<group>"; };
+		12C177CB2CCBCC9F002346D5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		12C90DB42CC0EEE700CEA55B /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		12C90DB62CC0EFB300CEA55B /* InstructionTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTemplate.swift; sourceTree = "<group>"; };
+		12C90DB82CC0F93A00CEA55B /* FourthSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthSlide.swift; sourceTree = "<group>"; };
+		12C90DBB2CC0FAD900CEA55B /* PreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreView.swift; sourceTree = "<group>"; };
+		12C90DBD2CC0FB8C00CEA55B /* VideoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreview.swift; sourceTree = "<group>"; };
+		12C90DBF2CC0FDAC00CEA55B /* MenuElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuElement.swift; sourceTree = "<group>"; };
+		12C90DC12CC0FEC800CEA55B /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		12C90DC72CC1204400CEA55B /* VideoGridElementLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGridElementLabel.swift; sourceTree = "<group>"; };
+		12C90DC92CC1243300CEA55B /* RecentsFolderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsFolderLabel.swift; sourceTree = "<group>"; };
+		12C90DCC2CC13EBD00CEA55B /* VideoCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCover.swift; sourceTree = "<group>"; };
+		12C90DCE2CC13F7B00CEA55B /* CoverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverButton.swift; sourceTree = "<group>"; };
+		12C90DD12CC151E200CEA55B /* MusicGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGrid.swift; sourceTree = "<group>"; };
+		12C90DD42CC155C900CEA55B /* FoldersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersManager.swift; sourceTree = "<group>"; };
+		12E51D062CD269D2002C2A8B /* VideosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosManager.swift; sourceTree = "<group>"; };
+		12E51D0A2CD28861002C2A8B /* EllipsisButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisButton.swift; sourceTree = "<group>"; };
+		12EC2FC42CC25064001CFA35 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		12EC2FE02CC26B1B001CFA35 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		12EC2FE32CC28387001CFA35 /* SelectFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFolder.swift; sourceTree = "<group>"; };
+		12EC2FE52CC28399001CFA35 /* ListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
+		12EC2FE72CC2895D001CFA35 /* FolderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderList.swift; sourceTree = "<group>"; };
+		12EC2FE92CC289E0001CFA35 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		12F333D82CD62A68001ECED5 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
+		12F334122CD661C2001ECED5 /* LinkFieldOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFieldOverlay.swift; sourceTree = "<group>"; };
+		12FA28992CC8F35B001E6AF7 /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
+		12FF4DD12CD3B356006C1EF9 /* FolderMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderMenuButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		12500D1B2CBEA2C50030C1B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12500D472CBEA3DB0030C1B5 /* ApphudSDK in Frameworks */,
+				1268D8A72CCA5A7F00C3979A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120B706F2CBFA153004C531B /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				120B70812CBFAD64004C531B /* CloseButton.swift */,
+				120B706E2CBFA153004C531B /* LogoAndAdvantages.swift */,
+				120B706B2CBFA153004C531B /* PrivacyPolicyLinks.swift */,
+				120B70862CBFC285004C531B /* SubscriptionOptions */,
+				12500D532CBEA5090030C1B5 /* BestOfferBadgeView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		120B70702CBFA153004C531B /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				120B706A2CBFA153004C531B /* PaywallView.swift */,
+				120B707F2CBFA9B0004C531B /* PaywallBackground.swift */,
+				120B706F2CBFA153004C531B /* Elements */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		120B70762CBFA237004C531B /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				120B707D2CBFA325004C531B /* MainView.swift */,
+				1237D4F62CCFC24B0060DC5A /* BackgroundMainView.swift */,
+				1237D4F82CCFC2CB0060DC5A /* TitleMainView.swift */,
+				1237D4FA2CCFC3760060DC5A /* DownloadingProgressView.swift */,
+				1237D4FF2CCFC5810060DC5A /* ShowInstructionsButton.swift */,
+				120B70A12CBFF099004C531B /* PasteOrXButtonView.swift */,
+				127275462CC7DE4D00800BA3 /* WrongLinkAllert.swift */,
+				1237D4FE2CCFC5600060DC5A /* LinkField */,
+				12C90DB32CC0EEC100CEA55B /* Manual */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		120B70772CBFA25B004C531B /* SavedView */ = {
+			isa = PBXGroup;
+			children = (
+				120B707B2CBFA29B004C531B /* SavedView.swift */,
+				1237D4F42CCF6C190060DC5A /* NewfolderAllertbody.swift */,
+				12C90DD02CC151C200CEA55B /* Music */,
+				12C90DC32CC10C1000CEA55B /* Video */,
+			);
+			path = SavedView;
+			sourceTree = "<group>";
+		};
+		120B70782CBFA266004C531B /* TrendsView */ = {
+			isa = PBXGroup;
+			children = (
+				120B70792CBFA281004C531B /* TrendsView.swift */,
+				123ED4E32CC6402700CE0F88 /* TrendsSection.swift */,
+				123ED4E72CC6552200CE0F88 /* OpenSection.swift */,
+				123ED4E52CC6447800CE0F88 /* CardView.swift */,
+				122CEF222CD4B33E005A146F /* CardLabel.swift */,
+				12C177C52CCB9D4D002346D5 /* SeeAllButton.swift */,
+				123ED4EB2CC660F800CE0F88 /* AlbumView */,
+			);
+			path = TrendsView;
+			sourceTree = "<group>";
+		};
+		120B70832CBFB0A9004C531B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				120B70842CBFB0B2004C531B /* Label.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		120B70862CBFC285004C531B /* SubscriptionOptions */ = {
+			isa = PBXGroup;
+			children = (
+				120B706D2CBFA153004C531B /* SubscriptionsOptions.swift */,
+				120B706C2CBFA153004C531B /* SubscriptionButton.swift */,
+			);
+			path = SubscriptionOptions;
+			sourceTree = "<group>";
+		};
+		122CEF282CD4DB98005A146F /* MusicGridElements */ = {
+			isa = PBXGroup;
+			children = (
+				122CEF292CD4DBB3005A146F /* MusicGridElement.swift */,
+				122CEF2B2CD4DD4A005A146F /* MusicGridElementLabel.swift */,
+			);
+			path = MusicGridElements;
+			sourceTree = "<group>";
+		};
+		122CEF2F2CD4E13A005A146F /* MusicFolderView */ = {
+			isa = PBXGroup;
+			children = (
+				122CEF2D2CD4DF4A005A146F /* MusicFolderView.swift */,
+				122CEF302CD4E17A005A146F /* TrackList.swift */,
+				122CEF342CD4E56F005A146F /* TrackListRow.swift */,
+				122CEF322CD4E224005A146F /* NoMusicView.swift */,
+			);
+			path = MusicFolderView;
+			sourceTree = "<group>";
+		};
+		122CEF382CD4F202005A146F /* PlaylistGridElements */ = {
+			isa = PBXGroup;
+			children = (
+				122CEF392CD4F241005A146F /* PlaylistGridElement.swift */,
+				122CEF362CD4F0D6005A146F /* PlaylistLabel.swift */,
+			);
+			path = PlaylistGridElements;
+			sourceTree = "<group>";
+		};
+		1237D4FE2CCFC5600060DC5A /* LinkField */ = {
+			isa = PBXGroup;
+			children = (
+				1237D4FC2CCFC3E20060DC5A /* LinkFieldMainView.swift */,
+				120B708D2CBFDFE6004C531B /* LinkField.swift */,
+				12F334122CD661C2001ECED5 /* LinkFieldOverlay.swift */,
+			);
+			path = LinkField;
+			sourceTree = "<group>";
+		};
+		123ED4EB2CC660F800CE0F88 /* AlbumView */ = {
+			isa = PBXGroup;
+			children = (
+				123ED4EC2CC6611700CE0F88 /* AlbumView.swift */,
+				12FA28992CC8F35B001E6AF7 /* CoverView.swift */,
+				123ED4F02CC6695600CE0F88 /* ListRow.swift */,
+				123ED4EE2CC6684D00CE0F88 /* PlayButton.swift */,
+			);
+			path = AlbumView;
+			sourceTree = "<group>";
+		};
 		12500D152CBEA2C50030C1B5 = {
 			isa = PBXGroup;
 			children = (
-				12500D202CBEA2C50030C1B5 /* TikTokApp */,
+				12500D362CBEA2D40030C1B5 /* TikTokApp */,
 				12500D1F2CBEA2C50030C1B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +380,236 @@
 				12500D1E2CBEA2C50030C1B5 /* TikTokApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		12500D312CBEA2D40030C1B5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				12500D302CBEA2D40030C1B5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		12500D362CBEA2D40030C1B5 /* TikTokApp */ = {
+			isa = PBXGroup;
+			children = (
+				02A01E332CD8EA7D007676A6 /* Info.plist */,
+				12500D342CBEA2D40030C1B5 /* TikTokApp.entitlements */,
+				12500D352CBEA2D40030C1B5 /* TikTokAppApp.swift */,
+				12500D312CBEA2D40030C1B5 /* Preview Content */,
+				12500D322CBEA2D40030C1B5 /* Assets.xcassets */,
+				12EC2FC32CC25052001CFA35 /* Services */,
+				120B70832CBFB0A9004C531B /* Extensions */,
+				12500D3B2CBEA33D0030C1B5 /* Models */,
+				12500D3C2CBEA3470030C1B5 /* ViewModels */,
+				12500D3D2CBEA34F0030C1B5 /* Views */,
+			);
+			path = TikTokApp;
+			sourceTree = "<group>";
+		};
+		12500D3B2CBEA33D0030C1B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12C177C32CCB8839002346D5 /* TrendsModel.swift */,
+				122CEF262CD4BCB1005A146F /* MusicFolderModel.swift */,
+				127275232CC7911A00800BA3 /* ClipInfoModel.swift */,
+				122CEF202CD4AD03005A146F /* VideoFolderModel.swift */,
+				1268D89A2CCA2A4200C3979A /* DownloadLinkResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		12500D3C2CBEA3470030C1B5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				127275262CC7BD5B00800BA3 /* DownloadManager.swift */,
+				12E51D062CD269D2002C2A8B /* VideosManager.swift */,
+				122CEF242CD4BBC5005A146F /* MusicManager.swift */,
+				12500D482CBEA3ED0030C1B5 /* ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		12500D3D2CBEA34F0030C1B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12E51CCC2CD0BF4A002C2A8B /* StartViews */,
+				120B70702CBFA153004C531B /* Paywall */,
+				120B70762CBFA237004C531B /* MainView */,
+				12C90DBA2CC0FA4800CEA55B /* Preview */,
+				12EC2FE22CC28370001CFA35 /* SelectFolder */,
+				120B70772CBFA25B004C531B /* SavedView */,
+				120B70782CBFA266004C531B /* TrendsView */,
+				12500D5E2CBEA5090030C1B5 /* Elements */,
+				12500D412CBEA3B90030C1B5 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		12500D412CBEA3B90030C1B5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				12500D3E2CBEA3B90030C1B5 /* SettingsView.swift */,
+				12500D702CBEAA1B0030C1B5 /* SettingsPurchasesView.swift */,
+				12500D772CBEB8550030C1B5 /* SettingsActionsView.swift */,
+				120B705E2CBF9C0B004C531B /* SupportUsSection.swift */,
+				120B70622CBF9E6E004C531B /* InfoAndLegalSection.swift */,
+				12500D762CBEB21C0030C1B5 /* Elements */,
+				12500D402CBEA3B90030C1B5 /* AppVersionView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		12500D582CBEA5090030C1B5 /* HardCodeImageView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HardCodeImageView;
+			sourceTree = "<group>";
+		};
+		12500D5C2CBEA5090030C1B5 /* GridView */ = {
+			isa = PBXGroup;
+			children = (
+				12500D592CBEA5090030C1B5 /* AsyncImageGridView.swift */,
+				12500D5A2CBEA5090030C1B5 /* AsyncImageGridElementView.swift */,
+				12500D5B2CBEA5090030C1B5 /* AsyncImageView.swift */,
+			);
+			path = GridView;
+			sourceTree = "<group>";
+		};
+		12500D5D2CBEA5090030C1B5 /* Grids */ = {
+			isa = PBXGroup;
+			children = (
+				12500D582CBEA5090030C1B5 /* HardCodeImageView */,
+				12500D5C2CBEA5090030C1B5 /* GridView */,
+			);
+			path = Grids;
+			sourceTree = "<group>";
+		};
+		12500D5E2CBEA5090030C1B5 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				12500D4B2CBEA5090030C1B5 /* ProButtonView.swift */,
+				12500D4D2CBEA5090030C1B5 /* CapsuleButton.swift */,
+				120B708B2CBFDD43004C531B /* CapsuleEmptyButton.swift */,
+				12500D512CBEA5090030C1B5 /* SmallImageButton.swift */,
+				123ED4E92CC65D3600CE0F88 /* SmallImageLink.swift */,
+				12500D502CBEA5090030C1B5 /* DetailsBanner.swift */,
+				12500D522CBEA5090030C1B5 /* CapsuleNotification.swift */,
+				12500D5D2CBEA5090030C1B5 /* Grids */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		12500D762CBEB21C0030C1B5 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				12500D742CBEB1EE0030C1B5 /* SettingsButton.swift */,
+				120B70602CBF9CC5004C531B /* SettingsShareLink.swift */,
+				12500D3F2CBEA3B90030C1B5 /* SettingsElementLabel.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		127275252CC7946800800BA3 /* VideoPreview */ = {
+			isa = PBXGroup;
+			children = (
+				12C90DBD2CC0FB8C00CEA55B /* VideoPreview.swift */,
+				127275212CC7850300800BA3 /* ClipInfo.swift */,
+			);
+			path = VideoPreview;
+			sourceTree = "<group>";
+		};
+		12C90DB32CC0EEC100CEA55B /* Manual */ = {
+			isa = PBXGroup;
+			children = (
+				12C90DB42CC0EEE700CEA55B /* Instruction.swift */,
+				12C90DB62CC0EFB300CEA55B /* InstructionTemplate.swift */,
+				12C90DB82CC0F93A00CEA55B /* FourthSlide.swift */,
+			);
+			path = Manual;
+			sourceTree = "<group>";
+		};
+		12C90DBA2CC0FA4800CEA55B /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				12C90DBB2CC0FAD900CEA55B /* PreView.swift */,
+				127275252CC7946800800BA3 /* VideoPreview */,
+				12C90DC12CC0FEC800CEA55B /* Menu.swift */,
+				02A01E342CD91B78007676A6 /* PreviewNotifications.swift */,
+				12C90DBF2CC0FDAC00CEA55B /* MenuElement.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		12C90DC32CC10C1000CEA55B /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				12500D552CBEA5090030C1B5 /* VideoGrid.swift */,
+				12C90DC62CC1202100CEA55B /* VideoGridElements */,
+				12500D572CBEA5090030C1B5 /* VideoFolderView.swift */,
+				122CEF3B2CD512EB005A146F /* NoVideosView.swift */,
+				12FF4DD12CD3B356006C1EF9 /* FolderMenuButton.swift */,
+				12C90DCC2CC13EBD00CEA55B /* VideoCover.swift */,
+				12C90DCE2CC13F7B00CEA55B /* CoverButton.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		12C90DC62CC1202100CEA55B /* VideoGridElements */ = {
+			isa = PBXGroup;
+			children = (
+				12500D562CBEA5090030C1B5 /* VideoGridElement.swift */,
+				12C90DC72CC1204400CEA55B /* VideoGridElementLabel.swift */,
+				12C90DC92CC1243300CEA55B /* RecentsFolderLabel.swift */,
+			);
+			path = VideoGridElements;
+			sourceTree = "<group>";
+		};
+		12C90DD02CC151C200CEA55B /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				12C90DD12CC151E200CEA55B /* MusicGrid.swift */,
+				122CEF382CD4F202005A146F /* PlaylistGridElements */,
+				122CEF282CD4DB98005A146F /* MusicGridElements */,
+				122CEF2F2CD4E13A005A146F /* MusicFolderView */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		12E51CCC2CD0BF4A002C2A8B /* StartViews */ = {
+			isa = PBXGroup;
+			children = (
+				120B70642CBFA12B004C531B /* StartView.swift */,
+				120B70662CBFA12B004C531B /* LaunchScreen.swift */,
+				120B70652CBFA12B004C531B /* MainTabView.swift */,
+				120B70892CBFD993004C531B /* RateMeView.swift */,
+			);
+			path = StartViews;
+			sourceTree = "<group>";
+		};
+		12EC2FC32CC25052001CFA35 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				12F333D82CD62A68001ECED5 /* Tips.swift */,
+				12C90DD42CC155C900CEA55B /* FoldersManager.swift */,
+				12C177CB2CCBCC9F002346D5 /* ImageLoader.swift */,
+				12EC2FC42CC25064001CFA35 /* CacheManager.swift */,
+				12EC2FE02CC26B1B001CFA35 /* Errors.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		12EC2FE22CC28370001CFA35 /* SelectFolder */ = {
+			isa = PBXGroup;
+			children = (
+				12EC2FE32CC28387001CFA35 /* SelectFolder.swift */,
+				12EC2FE72CC2895D001CFA35 /* FolderList.swift */,
+				12EC2FE52CC28399001CFA35 /* ListElement.swift */,
+				12EC2FE92CC289E0001CFA35 /* CircleButton.swift */,
+				12E51D0A2CD28861002C2A8B /* EllipsisButton.swift */,
+			);
+			path = SelectFolder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,11 +627,10 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				12500D202CBEA2C50030C1B5 /* TikTokApp */,
-			);
 			name = TikTokApp;
 			packageProductDependencies = (
+				12500D462CBEA3DB0030C1B5 /* ApphudSDK */,
+				1268D8A62CCA5A7F00C3979A /* Alamofire */,
 			);
 			productName = TikTokApp;
 			productReference = 12500D1E2CBEA2C50030C1B5 /* TikTokApp.app */;
@@ -94,6 +660,10 @@
 			);
 			mainGroup = 12500D152CBEA2C50030C1B5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				12500D452CBEA3DB0030C1B5 /* XCRemoteSwiftPackageReference "ApphudSDK" */,
+				1268D8A52CCA5A7F00C3979A /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 12500D1F2CBEA2C50030C1B5 /* Products */;
 			projectDirPath = "";
@@ -109,6 +679,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12500D372CBEA2D40030C1B5 /* Preview Assets.xcassets in Resources */,
+				12500D382CBEA2D40030C1B5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +691,107 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122CEF372CD4F0D6005A146F /* PlaylistLabel.swift in Sources */,
+				122CEF2C2CD4DD4A005A146F /* MusicGridElementLabel.swift in Sources */,
+				12EC2FC52CC2506B001CFA35 /* CacheManager.swift in Sources */,
+				127275242CC7912900800BA3 /* ClipInfoModel.swift in Sources */,
+				12E51D0B2CD28861002C2A8B /* EllipsisButton.swift in Sources */,
+				123ED4EF2CC6684D00CE0F88 /* PlayButton.swift in Sources */,
+				1237D5002CCFC5810060DC5A /* ShowInstructionsButton.swift in Sources */,
+				12500D3A2CBEA2D40030C1B5 /* TikTokAppApp.swift in Sources */,
+				12500D422CBEA3B90030C1B5 /* SettingsView.swift in Sources */,
+				12C177C42CCB8846002346D5 /* TrendsModel.swift in Sources */,
+				120B708E2CBFDFE6004C531B /* LinkField.swift in Sources */,
+				12500D432CBEA3B90030C1B5 /* SettingsElementLabel.swift in Sources */,
+				122CEF272CD4BCB3005A146F /* MusicFolderModel.swift in Sources */,
+				123ED4E42CC6402700CE0F88 /* TrendsSection.swift in Sources */,
+				120B70672CBFA12B004C531B /* MainTabView.swift in Sources */,
+				120B708A2CBFD993004C531B /* RateMeView.swift in Sources */,
+				120B70682CBFA12B004C531B /* LaunchScreen.swift in Sources */,
+				127275272CC7BD5B00800BA3 /* DownloadManager.swift in Sources */,
+				120B70692CBFA12B004C531B /* StartView.swift in Sources */,
+				122CEF3C2CD512EB005A146F /* NoVideosView.swift in Sources */,
+				1237D4F72CCFC24B0060DC5A /* BackgroundMainView.swift in Sources */,
+				122CEF352CD4E56F005A146F /* TrackListRow.swift in Sources */,
+				120B70822CBFAD64004C531B /* CloseButton.swift in Sources */,
+				12500D752CBEB1EE0030C1B5 /* SettingsButton.swift in Sources */,
+				122CEF312CD4E17A005A146F /* TrackList.swift in Sources */,
+				12C90DBC2CC0FAD900CEA55B /* PreView.swift in Sources */,
+				12FF4DD22CD3B356006C1EF9 /* FolderMenuButton.swift in Sources */,
+				12C90DD52CC155D300CEA55B /* FoldersManager.swift in Sources */,
+				12500D5F2CBEA5090030C1B5 /* AsyncImageGridElementView.swift in Sources */,
+				120B70A22CBFF099004C531B /* PasteOrXButtonView.swift in Sources */,
+				12500D602CBEA5090030C1B5 /* VideoGridElement.swift in Sources */,
+				123ED4EA2CC65D3600CE0F88 /* SmallImageLink.swift in Sources */,
+				12EC2FE12CC26B30001CFA35 /* Errors.swift in Sources */,
+				12C177C62CCB9D4D002346D5 /* SeeAllButton.swift in Sources */,
+				12EC2FE82CC2895D001CFA35 /* FolderList.swift in Sources */,
+				12C90DBE2CC0FB8C00CEA55B /* VideoPreview.swift in Sources */,
+				12C90DB92CC0F93A00CEA55B /* FourthSlide.swift in Sources */,
+				12500D612CBEA5090030C1B5 /* SmallImageButton.swift in Sources */,
+				123ED4ED2CC6611700CE0F88 /* AlbumView.swift in Sources */,
+				120B707A2CBFA281004C531B /* TrendsView.swift in Sources */,
+				12C90DCA2CC1243300CEA55B /* RecentsFolderLabel.swift in Sources */,
+				122CEF2A2CD4DBB3005A146F /* MusicGridElement.swift in Sources */,
+				122CEF232CD4B33E005A146F /* CardLabel.swift in Sources */,
+				12500D622CBEA5090030C1B5 /* BestOfferBadgeView.swift in Sources */,
+				1237D4FB2CCFC3760060DC5A /* DownloadingProgressView.swift in Sources */,
+				12500D632CBEA5090030C1B5 /* VideoFolderView.swift in Sources */,
+				02A01E352CD91B78007676A6 /* PreviewNotifications.swift in Sources */,
+				12C90DB72CC0EFB300CEA55B /* InstructionTemplate.swift in Sources */,
+				12C90DCF2CC13F7B00CEA55B /* CoverButton.swift in Sources */,
+				120B70712CBFA153004C531B /* LogoAndAdvantages.swift in Sources */,
+				120B70722CBFA153004C531B /* PrivacyPolicyLinks.swift in Sources */,
+				122CEF3A2CD4F241005A146F /* PlaylistGridElement.swift in Sources */,
+				120B70732CBFA153004C531B /* PaywallView.swift in Sources */,
+				12C90DC82CC1204400CEA55B /* VideoGridElementLabel.swift in Sources */,
+				122CEF332CD4E224005A146F /* NoMusicView.swift in Sources */,
+				120B70742CBFA153004C531B /* SubscriptionsOptions.swift in Sources */,
+				12C90DC02CC0FDAC00CEA55B /* MenuElement.swift in Sources */,
+				120B70752CBFA153004C531B /* SubscriptionButton.swift in Sources */,
+				120B70802CBFA9B0004C531B /* PaywallBackground.swift in Sources */,
+				12FA289A2CC8F35B001E6AF7 /* CoverView.swift in Sources */,
+				1268D89D2CCA2A4200C3979A /* DownloadLinkResponse.swift in Sources */,
+				12C90DD22CC151E200CEA55B /* MusicGrid.swift in Sources */,
+				1237D4F52CCF6C190060DC5A /* NewfolderAllertbody.swift in Sources */,
+				12C90DC22CC0FEC800CEA55B /* Menu.swift in Sources */,
+				12C90DCD2CC13EBD00CEA55B /* VideoCover.swift in Sources */,
+				12500D662CBEA5090030C1B5 /* CapsuleNotification.swift in Sources */,
+				12500D672CBEA5090030C1B5 /* AsyncImageGridView.swift in Sources */,
+				122CEF2E2CD4DF4A005A146F /* MusicFolderView.swift in Sources */,
+				12500D682CBEA5090030C1B5 /* AsyncImageView.swift in Sources */,
+				12EC2FE42CC28387001CFA35 /* SelectFolder.swift in Sources */,
+				120B70632CBF9E6E004C531B /* InfoAndLegalSection.swift in Sources */,
+				127275472CC7DE4D00800BA3 /* WrongLinkAllert.swift in Sources */,
+				12C177CC2CCBCCA6002346D5 /* ImageLoader.swift in Sources */,
+				120B707E2CBFA325004C531B /* MainView.swift in Sources */,
+				12500D692CBEA5090030C1B5 /* ProButtonView.swift in Sources */,
+				127275222CC7850300800BA3 /* ClipInfo.swift in Sources */,
+				120B70612CBF9CC5004C531B /* SettingsShareLink.swift in Sources */,
+				1237D4F92CCFC2CB0060DC5A /* TitleMainView.swift in Sources */,
+				12500D782CBEB8550030C1B5 /* SettingsActionsView.swift in Sources */,
+				123ED4F12CC6695600CE0F88 /* ListRow.swift in Sources */,
+				123ED4E82CC6552200CE0F88 /* OpenSection.swift in Sources */,
+				12500D6B2CBEA5090030C1B5 /* VideoGrid.swift in Sources */,
+				12F334132CD661C2001ECED5 /* LinkFieldOverlay.swift in Sources */,
+				12500D6C2CBEA5090030C1B5 /* CapsuleButton.swift in Sources */,
+				12EC2FE62CC28399001CFA35 /* ListElement.swift in Sources */,
+				120B705F2CBF9C0B004C531B /* SupportUsSection.swift in Sources */,
+				122CEF212CD4AD0A005A146F /* VideoFolderModel.swift in Sources */,
+				12500D6D2CBEA5090030C1B5 /* DetailsBanner.swift in Sources */,
+				12E51D072CD269FD002C2A8B /* VideosManager.swift in Sources */,
+				120B707C2CBFA29B004C531B /* SavedView.swift in Sources */,
+				120B708C2CBFDD43004C531B /* CapsuleEmptyButton.swift in Sources */,
+				12F333D92CD62A68001ECED5 /* Tips.swift in Sources */,
+				12500D492CBEA3F20030C1B5 /* ViewModel.swift in Sources */,
+				12EC2FEA2CC289E0001CFA35 /* CircleButton.swift in Sources */,
+				122CEF252CD4BBCD005A146F /* MusicManager.swift in Sources */,
+				12C90DB52CC0EEE700CEA55B /* Instruction.swift in Sources */,
+				12500D442CBEA3B90030C1B5 /* AppVersionView.swift in Sources */,
+				1237D4FD2CCFC3E20060DC5A /* LinkFieldMainView.swift in Sources */,
+				120B70852CBFB0BB004C531B /* Label.swift in Sources */,
+				123ED4E62CC6447800CE0F88 /* CardView.swift in Sources */,
+				12500D712CBEAA1B0030C1B5 /* SettingsPurchasesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +925,12 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TikTokApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TikClip - Video Save";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires read and write access to the photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -260,9 +939,9 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
@@ -270,10 +949,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Anton-Ra.TikTokApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 1;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -291,6 +971,12 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TikTokApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TikClip - Video Save";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires read and write access to the photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -299,9 +985,9 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
@@ -309,10 +995,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Anton-Ra.TikTokApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 1;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
@@ -339,6 +1026,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12500D452CBEA3DB0030C1B5 /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apphud/ApphudSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.0;
+			};
+		};
+		1268D8A52CCA5A7F00C3979A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12500D462CBEA3DB0030C1B5 /* ApphudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12500D452CBEA3DB0030C1B5 /* XCRemoteSwiftPackageReference "ApphudSDK" */;
+			productName = ApphudSDK;
+		};
+		1268D8A62CCA5A7F00C3979A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1268D8A52CCA5A7F00C3979A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12500D162CBEA2C50030C1B5 /* Project object */;
 }
