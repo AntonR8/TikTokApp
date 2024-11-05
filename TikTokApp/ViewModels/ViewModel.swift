@@ -45,6 +45,7 @@ class ViewModel: ObservableObject {
     @Published var showTrackNameCopied = false
     @Published var showAudioSavedToFiles = false
     @Published var showVideoSaved = false
+    @Published var showVideoNOTSaved = false
 
     // Downloading
     let downloadManager = DownloadManager()
@@ -152,10 +153,12 @@ class ViewModel: ObservableObject {
     
     
     func saveVideo() {
-        print(tikTokdownloadLink)
+        downloadManager.videoSavedSuccessfully = false
         downloadManager.downloadAndSaveVideoToGallery(videoURL: tikTokdownloadLink)
-        withAnimation(.easeInOut(duration: 1)) {
+        if downloadManager.videoSavedSuccessfully {
             showVideoSaved = true
+        } else {
+            showVideoNOTSaved = true
         }
     }
 

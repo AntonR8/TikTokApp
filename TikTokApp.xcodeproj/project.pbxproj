@@ -61,7 +61,6 @@
 		12500D422CBEA3B90030C1B5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D3E2CBEA3B90030C1B5 /* SettingsView.swift */; };
 		12500D432CBEA3B90030C1B5 /* SettingsElementLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D3F2CBEA3B90030C1B5 /* SettingsElementLabel.swift */; };
 		12500D442CBEA3B90030C1B5 /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D402CBEA3B90030C1B5 /* AppVersionView.swift */; };
-		12500D472CBEA3DB0030C1B5 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 12500D462CBEA3DB0030C1B5 /* ApphudSDK */; };
 		12500D492CBEA3F20030C1B5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D482CBEA3ED0030C1B5 /* ViewModel.swift */; };
 		12500D5F2CBEA5090030C1B5 /* AsyncImageGridElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D5A2CBEA5090030C1B5 /* AsyncImageGridElementView.swift */; };
 		12500D602CBEA5090030C1B5 /* VideoGridElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D562CBEA5090030C1B5 /* VideoGridElement.swift */; };
@@ -79,7 +78,6 @@
 		12500D752CBEB1EE0030C1B5 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D742CBEB1EE0030C1B5 /* SettingsButton.swift */; };
 		12500D782CBEB8550030C1B5 /* SettingsActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D772CBEB8550030C1B5 /* SettingsActionsView.swift */; };
 		1268D89D2CCA2A4200C3979A /* DownloadLinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1268D89A2CCA2A4200C3979A /* DownloadLinkResponse.swift */; };
-		1268D8A72CCA5A7F00C3979A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1268D8A62CCA5A7F00C3979A /* Alamofire */; };
 		127275222CC7850300800BA3 /* ClipInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275212CC7850300800BA3 /* ClipInfo.swift */; };
 		127275242CC7912900800BA3 /* ClipInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275232CC7911A00800BA3 /* ClipInfoModel.swift */; };
 		127275272CC7BD5B00800BA3 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275262CC7BD5B00800BA3 /* DownloadManager.swift */; };
@@ -228,8 +226,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12500D472CBEA3DB0030C1B5 /* ApphudSDK in Frameworks */,
-				1268D8A72CCA5A7F00C3979A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,8 +625,6 @@
 			);
 			name = TikTokApp;
 			packageProductDependencies = (
-				12500D462CBEA3DB0030C1B5 /* ApphudSDK */,
-				1268D8A62CCA5A7F00C3979A /* Alamofire */,
 			);
 			productName = TikTokApp;
 			productReference = 12500D1E2CBEA2C50030C1B5 /* TikTokApp.app */;
@@ -661,8 +655,6 @@
 			mainGroup = 12500D152CBEA2C50030C1B5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				12500D452CBEA3DB0030C1B5 /* XCRemoteSwiftPackageReference "ApphudSDK" */,
-				1268D8A52CCA5A7F00C3979A /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 12500D1F2CBEA2C50030C1B5 /* Products */;
@@ -1026,38 +1018,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		12500D452CBEA3DB0030C1B5 /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apphud/ApphudSDK";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.5.0;
-			};
-		};
-		1268D8A52CCA5A7F00C3979A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.10.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		12500D462CBEA3DB0030C1B5 /* ApphudSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12500D452CBEA3DB0030C1B5 /* XCRemoteSwiftPackageReference "ApphudSDK" */;
-			productName = ApphudSDK;
-		};
-		1268D8A62CCA5A7F00C3979A /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1268D8A52CCA5A7F00C3979A /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12500D162CBEA2C50030C1B5 /* Project object */;
 }

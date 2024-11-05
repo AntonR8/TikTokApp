@@ -8,6 +8,7 @@ class DownloadManager {
     let tokenvalue = "0118a46e-50df-4c72-8442-63043b863a69"
     let domen = "https://backendapppoint.space/"
 
+    var videoSavedSuccessfully = false
 
     func postTikTokRequest(link: String ,completionHandler: @escaping (String) -> ()) {
         let URLString = "\(domen)api/tiktokDownload"
@@ -73,6 +74,7 @@ class DownloadManager {
                     }) { completed, error in
                         if completed {
                             print("Video is saved!")
+                            self.videoSavedSuccessfully = true
                         }
                         if let error {
                             print("ERROR: \(error)")
@@ -83,6 +85,7 @@ class DownloadManager {
                 print("ERROR downloadAndSaveVideoToGallery: no url or urlData")
             }
         }
+
     }
     
     func downloadTrack(trackurl: String) async -> Data? {

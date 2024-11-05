@@ -23,7 +23,17 @@ struct PreviewNotifications: View {
                         }
                     }
             }
-            
+
+            if vm.showVideoNOTSaved {
+                CapsuleNotification(iconName: "exclamationmark.triangle.fill", message: "Error saving video")
+                    .padding(.top, 40)
+                    .onAppear{
+                        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+                            vm.showVideoNOTSaved = false
+                        }
+                    }
+            }
+
             if vm.showTrackNameCopied {
                 CapsuleNotification(iconName: "checkmark.circle.fill", message: "Track name copied")
                     .padding(.top, 40)
