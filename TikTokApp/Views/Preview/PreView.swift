@@ -42,6 +42,9 @@ struct PreView: View {
         .popover(isPresented: $vm.showRateMeView, content: {
             RateMeView()
         })
+        .alert("New folder", isPresented: $vm.showCreateVideosFolderAllert) {
+            NewfolderAllertbody()
+        } message: { Text("Enter a name for your folder for the new video collection") }
         .onAppear{
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 if vm.numberOfDownloads == 2 {

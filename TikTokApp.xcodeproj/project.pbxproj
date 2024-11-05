@@ -29,6 +29,8 @@
 		120B708C2CBFDD43004C531B /* CapsuleEmptyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B708B2CBFDD43004C531B /* CapsuleEmptyButton.swift */; };
 		120B708E2CBFDFE6004C531B /* LinkField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B708D2CBFDFE6004C531B /* LinkField.swift */; };
 		120B70A22CBFF099004C531B /* PasteOrXButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B70A12CBFF099004C531B /* PasteOrXButtonView.swift */; };
+		120C162B2CDA34A0005DF04E /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 120C162A2CDA34A0005DF04E /* ApphudSDK */; };
+		120C162E2CDA34BA005DF04E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 120C162D2CDA34BA005DF04E /* Alamofire */; };
 		122CEF212CD4AD0A005A146F /* VideoFolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF202CD4AD03005A146F /* VideoFolderModel.swift */; };
 		122CEF232CD4B33E005A146F /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF222CD4B33E005A146F /* CardLabel.swift */; };
 		122CEF252CD4BBCD005A146F /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CEF242CD4BBC5005A146F /* MusicManager.swift */; };
@@ -226,6 +228,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				120C162B2CDA34A0005DF04E /* ApphudSDK in Frameworks */,
+				120C162E2CDA34BA005DF04E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +629,8 @@
 			);
 			name = TikTokApp;
 			packageProductDependencies = (
+				120C162A2CDA34A0005DF04E /* ApphudSDK */,
+				120C162D2CDA34BA005DF04E /* Alamofire */,
 			);
 			productName = TikTokApp;
 			productReference = 12500D1E2CBEA2C50030C1B5 /* TikTokApp.app */;
@@ -655,6 +661,8 @@
 			mainGroup = 12500D152CBEA2C50030C1B5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				120C16292CDA34A0005DF04E /* XCRemoteSwiftPackageReference "ApphudSDK" */,
+				120C162C2CDA34BA005DF04E /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 12500D1F2CBEA2C50030C1B5 /* Products */;
@@ -1018,6 +1026,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		120C16292CDA34A0005DF04E /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apphud/ApphudSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.5;
+			};
+		};
+		120C162C2CDA34BA005DF04E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		120C162A2CDA34A0005DF04E /* ApphudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 120C16292CDA34A0005DF04E /* XCRemoteSwiftPackageReference "ApphudSDK" */;
+			productName = ApphudSDK;
+		};
+		120C162D2CDA34BA005DF04E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 120C162C2CDA34BA005DF04E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12500D162CBEA2C50030C1B5 /* Project object */;
 }

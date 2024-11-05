@@ -60,8 +60,10 @@ struct SelectFolder: View {
                 CapsuleEmptyButton(leftIcon: "plus", title: "New folder") {
                     print("vm.selectedType = \(vm.selectedType)")
                     if vm.selectedType == "Videos" {
+                        print("vm.showCreateVideosFolderAllert = true")
                         vm.showCreateVideosFolderAllert = true
                     } else if vm.selectedType == "Music" {
+                        print("vm.showCreateMusicFolderAllert = true")
                         vm.showCreateMusicFolderAllert = true
                         print("showCreateMusicFolderAllert = true")
                     }
