@@ -22,11 +22,10 @@ class ViewModel: ObservableObject {
 
     // Navigation
     @Published var tabSelection = 1
-    @Published var savedViewSelection = "Music"
+    @Published var savedViewSelection = "Videos"
     @Published var path = NavigationPath()
 
     // Folders
-    let folderManager = FoldersManager.shared
     @Published var showCreateMusicFolderAllert = false
     @Published var showCreateVideosFolderAllert = false
     @Published var showChangeFolderNameAllert = false
@@ -44,8 +43,7 @@ class ViewModel: ObservableObject {
     @Published var numberOfMusicSavings = 0
     @Published var showTrackNameCopied = false
     @Published var showAudioSavedToFiles = false
-    @Published var showVideoSaved = false
-    @Published var showVideoNOTSaved = false
+
 
     // Downloading
     let downloadManager = DownloadManager()
@@ -106,7 +104,16 @@ class ViewModel: ObservableObject {
         default: return ""
         }
     }
-    
+
+    func mainSectionExists() -> Bool {
+        var result: Bool = false
+        for item in trendsMusic {
+            if item.isMain { result = true }
+            else { result = false }
+        }
+        return result
+    }
+
     func showRateMe() {
         self.showRateMeView = (self.numberOfDownloads % 3 == 0)
     }
@@ -150,17 +157,10 @@ class ViewModel: ObservableObject {
             }
         }
     }
-    
-    
-    func saveVideo() {
-        downloadManager.videoSavedSuccessfully = false
-        downloadManager.downloadAndSaveVideoToGallery(videoURL: tikTokdownloadLink)
-        if downloadManager.videoSavedSuccessfully {
-            showVideoSaved = true
-        } else {
-            showVideoNOTSaved = true
-        }
-    }
+
+//    func saveVideo() {
+//  
+//    }
 
     func saveClipAudio() {
         Task {
@@ -170,9 +170,7 @@ class ViewModel: ObservableObject {
                     downloadManager.saveTrack(data: mp3data, name: clipInfo.musicTitle)
                 } else { print("no mp3data") }
             }
-            
         }
-       
     }
 
     func getTrendsMusic() {
@@ -181,15 +179,7 @@ class ViewModel: ObservableObject {
         }
     }
 
-    // interface
-    func mainSectionExists() -> Bool {
-        var result: Bool = false
-        for item in trendsMusic {
-            if item.isMain { result = true }
-            else { result = false }
-        }
-        return result
-    }
+
 
 
 //    func createButtonPushed() {

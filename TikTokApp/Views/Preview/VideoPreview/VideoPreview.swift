@@ -12,17 +12,27 @@ struct VideoPreview: View {
     let clipLink: String
 
     var body: some View {
+
         Link(destination: URL(string: clipLink)!) {
-            AsyncImage(url: URL(string: info.videoPreview)) { image in
-                if let image = image.image {
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 25))
-                } else {
-                    ProgressView()
+            ZStack {
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(Color.gray.opacity(0.1))
+                    .frame(width: 286, height: 508)
+                AsyncImage(url: URL(string: info.videoPreview)) { image in
+                    if let image = image.image {
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 25))
+                            .frame(width: 286, height: 508)
+                    } else {
+                        ProgressView()
+                            .multilineTextAlignment(.center)
+                            .frame(width: 286, height: 508)
+                    }
                 }
             }
+
         }
         .overlay(alignment: .bottom) {
                 ClipInfo(info: info)
@@ -39,6 +49,6 @@ struct VideoPreview: View {
                         .clipShape(Circle())
             }
         }
-        .padding(32)
+        .padding()
     }
 }

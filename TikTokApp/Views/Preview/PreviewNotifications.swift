@@ -13,30 +13,27 @@ struct PreviewNotifications: View {
     @EnvironmentObject var videosManager: VideosManager
     
     var body: some View {
-        ZStack {
-            if vm.showVideoSaved {
+        VStack {
+            if videosManager.showVideoSaved {
                 CapsuleNotification(iconName: "checkmark.circle.fill", message: "Video saved")
-                    .padding(.top, 40)
                     .onAppear{
                         DispatchQueue.main.asyncAfter(deadline: .now()+3) {
-                            vm.showVideoSaved = false
+                            videosManager.showVideoSaved = false
                         }
                     }
             }
 
-            if vm.showVideoNOTSaved {
+            if videosManager.showVideoNOTSaved {
                 CapsuleNotification(iconName: "exclamationmark.triangle.fill", message: "Error saving video")
-                    .padding(.top, 40)
                     .onAppear{
                         DispatchQueue.main.asyncAfter(deadline: .now()+3) {
-                            vm.showVideoNOTSaved = false
+                            videosManager.showVideoNOTSaved = false
                         }
                     }
             }
 
             if vm.showTrackNameCopied {
                 CapsuleNotification(iconName: "checkmark.circle.fill", message: "Track name copied")
-                    .padding(.top, 40)
                     .onAppear{
                         DispatchQueue.main.asyncAfter(deadline: .now()+3) {
                             vm.showTrackNameCopied = false
@@ -46,7 +43,6 @@ struct PreviewNotifications: View {
             
             if vm.showAudioSavedToFiles {
                 CapsuleNotification(iconName: "checkmark.circle.fill", message: "Saved audio from video")
-                    .padding(.top, 40)
                     .onAppear{
                         DispatchQueue.main.asyncAfter(deadline: .now()+3) {
                             vm.showAudioSavedToFiles = false
@@ -56,7 +52,6 @@ struct PreviewNotifications: View {
             
             if musicManager.showAddedToFolder {
                 CapsuleNotification(iconName: "checkmark.circle.fill", message: "Added to folder")
-                    .padding(.top, 40)
                     .onAppear{
                         DispatchQueue.main.asyncAfter(deadline: .now()+3) {
                             musicManager.showAddedToFolder = false
@@ -66,9 +61,8 @@ struct PreviewNotifications: View {
             
             if videosManager.showAddedToFolder {
                 CapsuleNotification(iconName: "checkmark.circle.fill", message: "Added to folder")
-                    .padding(.top, 40)
                     .onAppear{
-                        DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
                             videosManager.showAddedToFolder = false
                         }
                     }
@@ -76,6 +70,7 @@ struct PreviewNotifications: View {
             
             
         }
+        .padding(.top, 30)
     }
 }
 

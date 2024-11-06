@@ -1,3 +1,5 @@
+import Foundation
+
 struct MusicFolderModel: Codable, Hashable {
     let tracks: [TrackModel]
     let name: String

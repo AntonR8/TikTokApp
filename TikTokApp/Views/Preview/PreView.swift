@@ -10,6 +10,7 @@ import StoreKit
 
 struct PreView: View {
     @EnvironmentObject var vm: ViewModel
+    @EnvironmentObject var videosManager: VideosManager
     @Environment(\.requestReview) var requestReview
     
     var clipInfo: ClipInfoModel? { vm.clipInfo }
@@ -23,10 +24,10 @@ struct PreView: View {
                 Menu(link: clipLink, info: clipInfo)
                     .padding(.bottom)
                 CapsuleButton(leftIcon: "crown", title: "Save HD", action: {
-                    vm.saveVideo()
+                    videosManager.downloadAndSaveVideoToGallery(videoURL: vm.tikTokdownloadLink)
                 })
             } else {
-                Text("clipInfo is nil")
+                Text("Some problems, try again")
             }
         }
         .overlay(alignment: .top) {

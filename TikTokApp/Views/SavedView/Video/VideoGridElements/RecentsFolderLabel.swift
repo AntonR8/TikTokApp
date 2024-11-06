@@ -52,7 +52,8 @@ struct RecentsFolderLabel: View {
                             .frame(width: folderSize/2-16, height: folderSize/2-16)
                             .overlay {
                                 if recentsFolderCount > number {
-                                    AsyncImage(url: URL(string: recentsFourclips[number].videoPreview)) { image in
+                                    let currentURL = recentsFourclips[number].videoPreview
+                                    AsyncImage(url: URL(string: currentURL)) { image in
                                         if let image = image.image {
                                             image
                                                 .resizable()

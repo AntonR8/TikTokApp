@@ -1,6 +1,6 @@
 import SwiftUI
 import Alamofire
-import Photos
+
 
 
 class DownloadManager {
@@ -8,7 +8,7 @@ class DownloadManager {
     let tokenvalue = "0118a46e-50df-4c72-8442-63043b863a69"
     let domen = "https://backendapppoint.space/"
 
-    var videoSavedSuccessfully = false
+
 
     func postTikTokRequest(link: String ,completionHandler: @escaping (String) -> ()) {
         let URLString = "\(domen)api/tiktokDownload"
@@ -60,34 +60,8 @@ class DownloadManager {
             }
     }
     
-    func downloadAndSaveVideoToGallery(videoURL: String) {
-        DispatchQueue.global(qos: .background).async {
-            if let url = URL(string: videoURL),
-               let urlData = NSData(contentsOf: url) {
-                let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0];
-                let filePath="\(documentsPath)/tempFile.mp4"
-                DispatchQueue.main.async {
-                    urlData.write(toFile: filePath, atomically: true)
-                    print("DONE: urlData.write(toFile: filePath, atomically: true)")
-                    PHPhotoLibrary.shared().performChanges({
-                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
-                    }) { completed, error in
-                        if completed {
-                            print("Video is saved!")
-                            self.videoSavedSuccessfully = true
-                        }
-                        if let error {
-                            print("ERROR: \(error)")
-                        }
-                    }
-                }
-            } else {
-                print("ERROR downloadAndSaveVideoToGallery: no url or urlData")
-            }
-        }
+ 
 
-    }
-    
     func downloadTrack(trackurl: String) async -> Data? {
         var mp3data: Data?
         let url = URL(string: trackurl)!

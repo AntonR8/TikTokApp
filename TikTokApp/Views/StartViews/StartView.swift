@@ -21,8 +21,8 @@ struct StartView: View {
                 .opacity(vm.launchScreenOpacity)
                 .onAppear{
                     print("it is firstRun: \(firstRun)")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        withAnimation(.easeOut(duration: 2)) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        withAnimation(.easeOut(duration: 1)) {
                             if !firstRun {
                                 vm.launchScreenOpacity = 0
                             }

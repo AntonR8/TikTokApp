@@ -67,7 +67,9 @@ struct LaunchScreen: View {
                             }
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-                            allowATT()
+                            if firstRun {
+                                allowATT()
+                            }
                         }
                     }
                     .onDisappear{

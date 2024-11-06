@@ -55,6 +55,8 @@
 		123ED4ED2CC6611700CE0F88 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4EC2CC6611700CE0F88 /* AlbumView.swift */; };
 		123ED4EF2CC6684D00CE0F88 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4EE2CC6684D00CE0F88 /* PlayButton.swift */; };
 		123ED4F12CC6695600CE0F88 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123ED4F02CC6695600CE0F88 /* ListRow.swift */; };
+		124656462CDB5CBA007D08EE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 124656452CDB5CBA007D08EE /* Alamofire */; };
+		124656492CDB5CF0007D08EE /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 124656482CDB5CF0007D08EE /* ApphudSDK */; };
 		12500D372CBEA2D40030C1B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12500D302CBEA2D40030C1B5 /* Preview Assets.xcassets */; };
 		12500D382CBEA2D40030C1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12500D322CBEA2D40030C1B5 /* Assets.xcassets */; };
 		12500D3A2CBEA2D40030C1B5 /* TikTokAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12500D352CBEA2D40030C1B5 /* TikTokAppApp.swift */; };
@@ -84,7 +86,6 @@
 		127275472CC7DE4D00800BA3 /* WrongLinkAllert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275462CC7DE4D00800BA3 /* WrongLinkAllert.swift */; };
 		12C177C42CCB8846002346D5 /* TrendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C177C32CCB8839002346D5 /* TrendsModel.swift */; };
 		12C177C62CCB9D4D002346D5 /* SeeAllButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C177C52CCB9D4D002346D5 /* SeeAllButton.swift */; };
-		12C177CC2CCBCCA6002346D5 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C177CB2CCBCC9F002346D5 /* ImageLoader.swift */; };
 		12C90DB52CC0EEE700CEA55B /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DB42CC0EEE700CEA55B /* Instruction.swift */; };
 		12C90DB72CC0EFB300CEA55B /* InstructionTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DB62CC0EFB300CEA55B /* InstructionTemplate.swift */; };
 		12C90DB92CC0F93A00CEA55B /* FourthSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DB82CC0F93A00CEA55B /* FourthSlide.swift */; };
@@ -97,11 +98,8 @@
 		12C90DCD2CC13EBD00CEA55B /* VideoCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DCC2CC13EBD00CEA55B /* VideoCover.swift */; };
 		12C90DCF2CC13F7B00CEA55B /* CoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DCE2CC13F7B00CEA55B /* CoverButton.swift */; };
 		12C90DD22CC151E200CEA55B /* MusicGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DD12CC151E200CEA55B /* MusicGrid.swift */; };
-		12C90DD52CC155D300CEA55B /* FoldersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DD42CC155C900CEA55B /* FoldersManager.swift */; };
 		12E51D072CD269FD002C2A8B /* VideosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E51D062CD269D2002C2A8B /* VideosManager.swift */; };
 		12E51D0B2CD28861002C2A8B /* EllipsisButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E51D0A2CD28861002C2A8B /* EllipsisButton.swift */; };
-		12EC2FC52CC2506B001CFA35 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FC42CC25064001CFA35 /* CacheManager.swift */; };
-		12EC2FE12CC26B30001CFA35 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FE02CC26B1B001CFA35 /* Errors.swift */; };
 		12EC2FE42CC28387001CFA35 /* SelectFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FE32CC28387001CFA35 /* SelectFolder.swift */; };
 		12EC2FE62CC28399001CFA35 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FE52CC28399001CFA35 /* ListElement.swift */; };
 		12EC2FE82CC2895D001CFA35 /* FolderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC2FE72CC2895D001CFA35 /* FolderList.swift */; };
@@ -193,7 +191,6 @@
 		127275462CC7DE4D00800BA3 /* WrongLinkAllert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongLinkAllert.swift; sourceTree = "<group>"; };
 		12C177C32CCB8839002346D5 /* TrendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsModel.swift; sourceTree = "<group>"; };
 		12C177C52CCB9D4D002346D5 /* SeeAllButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllButton.swift; sourceTree = "<group>"; };
-		12C177CB2CCBCC9F002346D5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		12C90DB42CC0EEE700CEA55B /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
 		12C90DB62CC0EFB300CEA55B /* InstructionTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTemplate.swift; sourceTree = "<group>"; };
 		12C90DB82CC0F93A00CEA55B /* FourthSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthSlide.swift; sourceTree = "<group>"; };
@@ -206,11 +203,8 @@
 		12C90DCC2CC13EBD00CEA55B /* VideoCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCover.swift; sourceTree = "<group>"; };
 		12C90DCE2CC13F7B00CEA55B /* CoverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverButton.swift; sourceTree = "<group>"; };
 		12C90DD12CC151E200CEA55B /* MusicGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGrid.swift; sourceTree = "<group>"; };
-		12C90DD42CC155C900CEA55B /* FoldersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersManager.swift; sourceTree = "<group>"; };
 		12E51D062CD269D2002C2A8B /* VideosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosManager.swift; sourceTree = "<group>"; };
 		12E51D0A2CD28861002C2A8B /* EllipsisButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisButton.swift; sourceTree = "<group>"; };
-		12EC2FC42CC25064001CFA35 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
-		12EC2FE02CC26B1B001CFA35 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		12EC2FE32CC28387001CFA35 /* SelectFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFolder.swift; sourceTree = "<group>"; };
 		12EC2FE52CC28399001CFA35 /* ListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
 		12EC2FE72CC2895D001CFA35 /* FolderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderList.swift; sourceTree = "<group>"; };
@@ -226,6 +220,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				124656462CDB5CBA007D08EE /* Alamofire in Frameworks */,
+				124656492CDB5CF0007D08EE /* ApphudSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,10 +584,6 @@
 			isa = PBXGroup;
 			children = (
 				12F333D82CD62A68001ECED5 /* Tips.swift */,
-				12C90DD42CC155C900CEA55B /* FoldersManager.swift */,
-				12C177CB2CCBCC9F002346D5 /* ImageLoader.swift */,
-				12EC2FC42CC25064001CFA35 /* CacheManager.swift */,
-				12EC2FE02CC26B1B001CFA35 /* Errors.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -625,6 +617,8 @@
 			);
 			name = TikTokApp;
 			packageProductDependencies = (
+				124656452CDB5CBA007D08EE /* Alamofire */,
+				124656482CDB5CF0007D08EE /* ApphudSDK */,
 			);
 			productName = TikTokApp;
 			productReference = 12500D1E2CBEA2C50030C1B5 /* TikTokApp.app */;
@@ -655,6 +649,8 @@
 			mainGroup = 12500D152CBEA2C50030C1B5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				124656442CDB5CBA007D08EE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				124656472CDB5CF0007D08EE /* XCRemoteSwiftPackageReference "ApphudSDK" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 12500D1F2CBEA2C50030C1B5 /* Products */;
@@ -685,7 +681,6 @@
 			files = (
 				122CEF372CD4F0D6005A146F /* PlaylistLabel.swift in Sources */,
 				122CEF2C2CD4DD4A005A146F /* MusicGridElementLabel.swift in Sources */,
-				12EC2FC52CC2506B001CFA35 /* CacheManager.swift in Sources */,
 				127275242CC7912900800BA3 /* ClipInfoModel.swift in Sources */,
 				12E51D0B2CD28861002C2A8B /* EllipsisButton.swift in Sources */,
 				123ED4EF2CC6684D00CE0F88 /* PlayButton.swift in Sources */,
@@ -710,12 +705,10 @@
 				122CEF312CD4E17A005A146F /* TrackList.swift in Sources */,
 				12C90DBC2CC0FAD900CEA55B /* PreView.swift in Sources */,
 				12FF4DD22CD3B356006C1EF9 /* FolderMenuButton.swift in Sources */,
-				12C90DD52CC155D300CEA55B /* FoldersManager.swift in Sources */,
 				12500D5F2CBEA5090030C1B5 /* AsyncImageGridElementView.swift in Sources */,
 				120B70A22CBFF099004C531B /* PasteOrXButtonView.swift in Sources */,
 				12500D602CBEA5090030C1B5 /* VideoGridElement.swift in Sources */,
 				123ED4EA2CC65D3600CE0F88 /* SmallImageLink.swift in Sources */,
-				12EC2FE12CC26B30001CFA35 /* Errors.swift in Sources */,
 				12C177C62CCB9D4D002346D5 /* SeeAllButton.swift in Sources */,
 				12EC2FE82CC2895D001CFA35 /* FolderList.swift in Sources */,
 				12C90DBE2CC0FB8C00CEA55B /* VideoPreview.swift in Sources */,
@@ -755,7 +748,6 @@
 				12EC2FE42CC28387001CFA35 /* SelectFolder.swift in Sources */,
 				120B70632CBF9E6E004C531B /* InfoAndLegalSection.swift in Sources */,
 				127275472CC7DE4D00800BA3 /* WrongLinkAllert.swift in Sources */,
-				12C177CC2CCBCCA6002346D5 /* ImageLoader.swift in Sources */,
 				120B707E2CBFA325004C531B /* MainView.swift in Sources */,
 				12500D692CBEA5090030C1B5 /* ProButtonView.swift in Sources */,
 				127275222CC7850300800BA3 /* ClipInfo.swift in Sources */,
@@ -910,10 +902,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TikTokApp/TikTokApp.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TikTokApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BZY75949H5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -938,7 +931,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bai.tiktokvapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AntonRa.tiktok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -957,10 +950,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TikTokApp/TikTokApp.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TikTokApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BZY75949H5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -985,7 +979,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bai.tiktokvapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AntonRa.tiktok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -1020,6 +1014,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		124656442CDB5CBA007D08EE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+		124656472CDB5CF0007D08EE /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apphud/ApphudSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		124656452CDB5CBA007D08EE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 124656442CDB5CBA007D08EE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		124656482CDB5CF0007D08EE /* ApphudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 124656472CDB5CF0007D08EE /* XCRemoteSwiftPackageReference "ApphudSDK" */;
+			productName = ApphudSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12500D162CBEA2C50030C1B5 /* Project object */;
 }

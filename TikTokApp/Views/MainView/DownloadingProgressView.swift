@@ -30,9 +30,8 @@ struct DownloadingProgressView: View {
                     if !clipInfo.videoPreview.isEmpty {
                         print("Запускаю функцию добавления клипа в Recents")
                         videosManager.addClip(to: "Recents", clip: clipInfo)
-                        print(vm.clipInfo!.videoPreview)
                     } else {
-                        print("😢clipInfo.videoPreview.isEmpty")
+                        print("clipInfo.videoPreview.isEmpty и не добавлен в Recents")
                     }
                 } else {
                     print("vm.clipInfo = nil")
