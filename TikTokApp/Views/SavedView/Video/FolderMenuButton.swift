@@ -33,7 +33,3 @@ struct FolderMenuButton: View {
     }
 }
 
-//#Preview {
-//    FolderMenuButton(folderName: "", action: {})
-//        .environmentObject(VideosManager())
-//}

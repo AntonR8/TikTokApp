@@ -10,12 +10,16 @@ import SwiftUI
 struct StartView: View {
     @EnvironmentObject var vm: ViewModel
     @AppStorage("firstRun") var firstRun = true
+   
 
     var body: some View {
         ZStack {
             MainTabView()
             if firstRun {
                 PaywallView()
+                    .onDisappear {
+                        vm.showReviewRequest = true
+                        }
             }
             LaunchScreen()
                 .opacity(vm.launchScreenOpacity)

@@ -14,29 +14,37 @@ struct LaunchScreen: View {
     @AppStorage("firstRun") var firstRun = true
     @State var movement = false
     @State var size: CGFloat = 50
-    @State var endLaunch: Bool = false
 
-    @Environment(\.requestReview) var requestReview
+    
 
     func allowATT() {
         ATTrackingManager.requestTrackingAuthorization { status in
             switch status {
             case .authorized:
                 print("Tracking Authorized")
-                movement = false
-//                print(ASIdentifierManager.shared().advertisingIdentifier)
+                DispatchQueue.main.async{
+                    vm.launchScreenOpacity = 0
+                }
             case .denied:
                 print("Tracking Denied")
-                movement = false
+                DispatchQueue.main.async{
+                vm.launchScreenOpacity = 0
+                }
             case .notDetermined:
                 print("Tracking Not Determined")
-                movement = false
+                DispatchQueue.main.asyncAfter(deadline: .now()+10) {
+                    vm.launchScreenOpacity = 0
+                    }
             case .restricted:
                 print("Tracking Restricted")
-                movement = false
+                        DispatchQueue.main.async{
+                vm.launchScreenOpacity = 0
+                        }
             @unknown default:
                 print("Tracking Unknown")
-                movement = false
+                            DispatchQueue.main.async{
+                vm.launchScreenOpacity = 0
+                            }
             }
         }
     }
@@ -67,30 +75,15 @@ struct LaunchScreen: View {
                             }
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                            movement = false
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now()+4) {
                             if firstRun {
                                 allowATT()
                             }
                         }
                     }
-                    .onDisappear{
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            if firstRun {
-                                requestReview()
-                            }
-                            endLaunch = true
-                        }
-                    }
             }
-            if endLaunch {
-                Button {
-                    withAnimation(.easeInOut(duration: 0.5)) {
-                        vm.launchScreenOpacity = 0
-                    }
-                } label: {
-                    LinearGradient(colors: [Color.launchscreen1, Color.launchscreen2], startPoint: .bottom, endPoint: .top)
-                }
-            }
-
         }
     }
 

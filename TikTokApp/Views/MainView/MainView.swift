@@ -15,22 +15,30 @@ struct MainView: View {
     @State var showInstruction = false
     @FocusState private var focusedField: Field?
     let saveTip = SaveTip()
+    @AppStorage("firstRun") var firstRun = true
+    @Environment(\.requestReview) var requestReview
 
     var body: some View {
         NavigationStack(path: $vm.path) {
             ZStack {
                 BackgroundMainView()
+                if vm.showReviewRequest {
+                Color.clear
+                            .onAppear {
+
+                                    requestReview()
+                                    firstRun = false
+                                vm.showReviewRequest = false
+                                }
+                            }
+
+
                 VStack {
                     Spacer()
                     TitleMainView()
                         .overlay {
                             if vm.showVPNLinkAlert {
-                                Text("Sorry, this link is not supported, please insert another one")
-                                    .font(.subheadline)
-                                    .multilineTextAlignment(.center)
-                                    .foregroundStyle(.white)
-                                    .padding()
-                                    .background(.accent)
+                                WrongLinkAllert()
                             }
                         }
                     LinkFieldMainView(link: $link)
@@ -40,7 +48,7 @@ struct MainView: View {
 //                            saveTip.invalidate(reason: .actionPerformed)
 //                        }
 //                        .tipViewStyle(CustomTipViewStyle())
-                    CapsuleButton(leftIcon: "", title: "Find", rightIcon: "arrow.forward") {
+                    CapsuleButton(title: "Find", rightIcon: "arrow.forward") {
                         vm.findButtonPushed(link: link)
                         showDownloading = true
                     }
@@ -78,6 +86,7 @@ struct MainView: View {
             .navigationDestination(for: String.self) { clipInfo in
                 PreView(tiktokLink: link, clipLink: link)
             }
+
         }
     }
 }

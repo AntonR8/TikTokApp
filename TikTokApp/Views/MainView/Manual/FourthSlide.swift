@@ -25,7 +25,7 @@ struct FourthSlide: View {
                 .padding(.top ,8)
             Text(text)
                 .font(.footnote)
-            CapsuleButton(leftIcon: "", title: "Got it!", rightIcon: "", action: {
+            CapsuleButton(title: "Got it!", action: {
                 showInstruction = false
             })
             .padding(.top, 40)

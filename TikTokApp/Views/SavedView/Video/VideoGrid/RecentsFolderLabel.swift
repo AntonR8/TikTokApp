@@ -15,9 +15,9 @@ struct RecentsFolderLabel: View {
     let frameCornerRadius: CGFloat = 20
     var recentsFolder: VideoFolderModel? { videosManager.returnFolder(folderName: "Recents") }
     var recentsFolderCount: Int { recentsFolder?.clips.count ?? 0 }
-    var recentsFourclips: [ClipInfoModel] { createrecentsFourclips()  }
+    var recentsFourclips: [ClipInfoModel] { createRecent4clips()  }
 
-    func createrecentsFourclips() -> [ClipInfoModel] {
+    func createRecent4clips() -> [ClipInfoModel] {
         guard
             let recentsFolder,
             recentsFolderCount > 0
@@ -36,10 +36,6 @@ struct RecentsFolderLabel: View {
         return clips
     }
 
-    init() {
-//        print(recentsFolderCount.description)
-    }
-
     var body: some View {
         RoundedRectangle(cornerRadius: frameCornerRadius)
             .fill(.gray.opacity(0.2))
@@ -52,16 +48,21 @@ struct RecentsFolderLabel: View {
                             .frame(width: folderSize/2-16, height: folderSize/2-16)
                             .overlay {
                                 if recentsFolderCount > number {
-                                    let currentURL = recentsFourclips[number].videoPreview
-                                    AsyncImage(url: URL(string: currentURL)) { image in
-                                        if let image = image.image {
-                                            image
-                                                .resizable()
-                                                .scaledToFill()
-                                                .frame(width: folderSize/2-16, height: folderSize/2-16)
-                                                .clipShape(RoundedRectangle(cornerRadius: imagecornerRadius))
-                                        } else {
-                                            ProgressView()
+                                    if let currentURL = URL(string: recentsFourclips[number].videoPreview) {
+                                        AsyncImage(url: currentURL) { response in
+                                            if let image = response.image {
+                                                image
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(width: folderSize/2-16, height: folderSize/2-16)
+                                                    .clipShape(RoundedRectangle(cornerRadius: imagecornerRadius))
+                                            } else {
+                                                ProgressView()
+                                                    .onAppear {
+                                                        vm.savedViewSelection = "Music"
+                                                        vm.savedViewSelection = "Videos"
+                                                    }
+                                            }
                                         }
                                     }
                                 }
@@ -71,9 +72,6 @@ struct RecentsFolderLabel: View {
                 })
                 .padding(12)
             }
-
-
-
     }
 }
 

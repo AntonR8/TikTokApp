@@ -9,13 +9,15 @@ import SwiftUI
 import AppTrackingTransparency
 import ApphudSDK
 import StoreKit
+import AdSupport
 
 class ViewModel: ObservableObject {
+
+    @AppStorage("firstLaunch") var firstLaunch = true
 
     // Paywall
     @Published var products: [ApphudProduct] = []
     @Published var chosenSubscription: ApphudProduct?
-    @AppStorage("firstLaunch") var firstLaunch = true
     @Published var proSubscriptionBought = false
     @Published var showPaywall: Bool = false
     @Published var firstLaunchPaywall = true
@@ -43,7 +45,7 @@ class ViewModel: ObservableObject {
     @Published var numberOfMusicSavings = 0
     @Published var showTrackNameCopied = false
     @Published var showAudioSavedToFiles = false
-
+    @Published var showReviewRequest = false
 
     // Downloading
     let downloadManager = DownloadManager()
@@ -61,8 +63,13 @@ class ViewModel: ObservableObject {
         }
 
         self.proSubscriptionBought = Apphud.hasActiveSubscription()
-
+        Apphud.setDeviceIdentifiers(idfa: nil, idfv: UIDevice.current.identifierForVendor?.uuidString)
+        fetchIDFA()
     }
+
+
+
+
 
     // MARK: - Functions:
 
@@ -73,13 +80,25 @@ class ViewModel: ObservableObject {
 
         await MainActor.run {
             self.products = myPlacement?.paywall?.products ?? []
-            if !products.isEmpty {
+            if products.count > 6 {
                 self.chosenSubscription = products[6]
                 print("По умолчанию задан продукт: \(chosenSubscription?.name ?? "не задан")")
             }
         }
         print("products successfully fetched: \(products.map { $0.name })")
     }
+
+    func fetchIDFA() {
+            if #available(iOS 14.5, *) {
+                DispatchQueue.main.asyncAfter(deadline: .now()+2.0) {
+                    ATTrackingManager.requestTrackingAuthorization { status in
+                        guard status == .authorized else {return}
+                        let idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+                        Apphud.setDeviceIdentifiers(idfa: idfa, idfv: UIDevice.current.identifierForVendor?.uuidString)
+                    }
+                }
+            }
+        }
 
     func makePurchase(product: ApphudProduct?) {
         Task {
@@ -194,30 +213,6 @@ class ViewModel: ObservableObject {
 //        }
 //    }
 
-//    func generateImage() {
-//        Task {
-//            do {
-//                async let requestID = try await self.downloadManager.getRequestID(prompt: curentPromt, selectedStyle: styleChosen ?? .none)
-//                let response = try await downloadManager.returnNotEmptyResponse(receivedRequestID: requestID)
-//                 let imageURLs = downloadManager.getImageURLs(response: response)
-//                await MainActor.run {
-//                    self.imageURLs = imageURLs
-//                    self.completed = 0
-//                    self.path.append("asdf")
-//                    self.isGenerating = false
-//                    self.completed = 100
-//                    for item in response.data.result {
-//                        self.recents.append(item.url)
-//                    }
-//                    self.freeGenerationsLeft -= 1
-//                }
-//            } catch {
-//                print("Request failed with error: \(error)")
-//                await MainActor.run {
-//                    requestError = true
-//                }
-//            }
-//        }
-//    }
+
 
 }

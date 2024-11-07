@@ -26,7 +26,6 @@ struct VideoGrid: View {
                 VideoGridElement(frameCornerRadius: frameCornerRadius, folderName: folder.name, icon: returnIcon(folder: folder.name))
             }
         })
-        .id(UUID())
         .alert("New folder", isPresented: $vm.showCreateVideosFolderAllert) {
             NewfolderAllertbody()
         } message: { Text("Enter a name for your folder for the new video collection") }

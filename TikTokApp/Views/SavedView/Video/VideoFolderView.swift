@@ -15,16 +15,14 @@ struct VideoFolderView: View {
     var folder: VideoFolderModel? { videosManager.returnFolder(folderName: folderName) }
     var folderClipsCount: Int { folder?.clips.count ?? 0 }
 
-//    func returnNavigationTitle() -> String {
-//        
-//    }
+    var navTitle: String? { nil }
 
     var body: some View {
         VStack(alignment: .leading) {
             Text("\(folderClipsCount) saved videos")
                 .font(.footnote)
                 .padding(.horizontal)
-                .navigationTitle(folderName)
+                .navigationTitle(navTitle ?? folderName)
             if let clips = folder?.clips {
                 if clips.isEmpty {
                     NoVideosView(folderName: folderName)
@@ -49,7 +47,6 @@ struct VideoFolderView: View {
             SelectFolder()
                 .presentationDetents([.medium])
         }
-
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 if folderName != "Saved" && folderName != "Recents" {

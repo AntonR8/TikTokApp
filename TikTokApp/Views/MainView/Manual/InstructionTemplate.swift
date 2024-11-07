@@ -25,7 +25,7 @@ struct InstructionTemplate: View {
                 .padding(.top ,8)
             Text(text)
                 .font(.footnote)
-            CapsuleButton(leftIcon: "", title: "Next step", rightIcon: "arrow.forward", action: {
+            CapsuleButton(title: "Next step", rightIcon: "arrow.forward", action: {
                 page += 1
             })
             .padding(.top, 40)

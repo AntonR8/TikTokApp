@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VideoGridElementLabel: View {
     @EnvironmentObject var videosManager: VideosManager
+    @EnvironmentObject var vm: ViewModel
     let folderName: String
     let folderSize: CGFloat = UIScreen.main.bounds.width/2 - 24
     let imagecornerRadius: CGFloat = 16
@@ -32,6 +33,10 @@ struct VideoGridElementLabel: View {
                                     .clipShape(RoundedRectangle(cornerRadius: imagecornerRadius))
                             } else {
                                 ProgressView()
+                                    .onAppear {
+                                        vm.savedViewSelection = "Music"
+                                        vm.savedViewSelection = "Videos"
+                                    }
                             }
                         }
                     }

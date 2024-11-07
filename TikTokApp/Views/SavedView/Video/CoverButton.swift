@@ -34,8 +34,13 @@ struct CoverButton: View {
 }
 
 #Preview {
-    VideoFolderView(folderName: "Recents")
+    ZStack {
+        Color.gray
+        CoverButton(
+            vm: .init(),
+            videosManager: .init(),
+            clip: ClipInfoModel(username: "", name: "", avatar: "", videoPreview: "", description: "", musicTitle: "", musicUrl: ""), folderName: "")
         .environmentObject(ViewModel())
         .environmentObject(VideosManager())
-
+    }
 }

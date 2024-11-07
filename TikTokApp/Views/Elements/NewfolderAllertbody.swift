@@ -31,6 +31,7 @@ struct NewfolderAllertbody: View {
         Button("Save", action: {
             savePushed()
             folderName  = ""
+            vm.showSelectFolders = true
         })
     }
 }
