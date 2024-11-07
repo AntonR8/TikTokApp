@@ -220,24 +220,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		120B706F2CBFA153004C531B /* Elements */ = {
-			isa = PBXGroup;
-			children = (
-				120B70812CBFAD64004C531B /* CloseButton.swift */,
-				120B706E2CBFA153004C531B /* LogoAndAdvantages.swift */,
-				120B706B2CBFA153004C531B /* PrivacyPolicyLinks.swift */,
-				120B70862CBFC285004C531B /* SubscriptionOptions */,
-				12500D532CBEA5090030C1B5 /* BestOfferBadgeView.swift */,
-			);
-			path = Elements;
-			sourceTree = "<group>";
-		};
 		120B70702CBFA153004C531B /* Paywall */ = {
 			isa = PBXGroup;
 			children = (
 				120B706A2CBFA153004C531B /* PaywallView.swift */,
 				120B707F2CBFA9B0004C531B /* PaywallBackground.swift */,
-				120B706F2CBFA153004C531B /* Elements */,
+				120B70812CBFAD64004C531B /* CloseButton.swift */,
+				120B706E2CBFA153004C531B /* LogoAndAdvantages.swift */,
+				120B706B2CBFA153004C531B /* PrivacyPolicyLinks.swift */,
+				120B70862CBFC285004C531B /* SubscriptionOptions */,
 			);
 			path = Paywall;
 			sourceTree = "<group>";
@@ -294,6 +285,7 @@
 			children = (
 				120B706D2CBFA153004C531B /* SubscriptionsOptions.swift */,
 				120B706C2CBFA153004C531B /* SubscriptionButton.swift */,
+				12500D532CBEA5090030C1B5 /* BestOfferBadgeView.swift */,
 			);
 			path = SubscriptionOptions;
 			sourceTree = "<group>";

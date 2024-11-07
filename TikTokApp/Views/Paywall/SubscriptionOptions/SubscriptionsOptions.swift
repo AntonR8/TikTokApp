@@ -20,7 +20,8 @@ struct SubscriptionsOptions: View {
                 Button {
                     annualSubscriptionChosen = true
                     weeklySubscriptionChosen = false
-                    vm.chosenSubscription = vm.products[6]
+                    let productName = "yearly_19.99_no-trial"
+                    vm.chosenSubscription = vm.products.first(where: { $0.name == productName })
                 } label: {
                     SubscriptionButton(isChosen: $annualSubscriptionChosen, subscriptionName: "Annual", pricePerYear: "Just $0.42 per week", bestOffer: true, pricePerPeriod: "$19.99", period: "per year", subscription: nil)
                 }
@@ -28,7 +29,8 @@ struct SubscriptionsOptions: View {
                 Button(action: {
                     annualSubscriptionChosen = false
                     weeklySubscriptionChosen = true
-                    vm.chosenSubscription = vm.products[7]
+                    let productName = "weekly_4.99_notrial"
+                    vm.chosenSubscription = vm.products.first(where: { $0.name == productName })
                 }, label: {
                     SubscriptionButton(isChosen: $weeklySubscriptionChosen, subscriptionName: "Weekly", pricePerYear: nil, bestOffer: false, pricePerPeriod: "$4.99", period: "per week", subscription: nil)
                 })

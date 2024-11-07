@@ -56,7 +56,7 @@ class ViewModel: ObservableObject {
 
     init() {
         getTrendsMusic()
-        
+
         Task {
             await Apphud.start(apiKey: "app_Lq3Eoit1CwyroaFcfpW2RyHXdekMfF")
             await loadProducts()
@@ -80,10 +80,10 @@ class ViewModel: ObservableObject {
 
         await MainActor.run {
             self.products = myPlacement?.paywall?.products ?? []
-            if products.count > 6 {
-                self.chosenSubscription = products[6]
+            if products.count > 2 {
+                self.chosenSubscription = products[1]
                 print("По умолчанию задан продукт: \(chosenSubscription?.name ?? "не задан")")
-            }
+            } else { print(products.count) }
         }
         print("products successfully fetched: \(products.map { $0.name })")
     }
@@ -177,10 +177,6 @@ class ViewModel: ObservableObject {
         }
     }
 
-//    func saveVideo() {
-//  
-//    }
-
     func saveClipAudio() {
         Task {
             if let clipInfo {
@@ -199,19 +195,6 @@ class ViewModel: ObservableObject {
     }
 
 
-
-
-//    func createButtonPushed() {
-//        if proSubscriptionBought {
-//            generateImage()
-//        } else {
-//            if freeGenerationsLeft > 0 {
-//                generateImage()
-//            } else {
-//                showSubscriptionSheet = true
-//            }
-//        }
-//    }
 
 
 
