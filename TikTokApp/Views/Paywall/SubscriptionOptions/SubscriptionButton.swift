@@ -18,16 +18,15 @@ struct SubscriptionButton: View {
 
     var parameters: (subscriptionName: String, pricePerYear: String?, bestOffer: Bool, pricePerPeriod: String, period: String)? { vm.returnSubscriptionViewParameters(subscription: subscription)}
 
-    var isChosen: Bool { selectedProductIndex == vm.selectedProductIndex}
-
 
     var body: some View {
         Button {
             vm.updatedSelectedProductIndex(selectedProductIndex)
+            print(vm.selectedProductIndex.description)
         } label: {
             HStack() {
-                Image(systemName: isChosen ? "button.programmable" : "circle")
-                    .foregroundStyle(isChosen ? .accent : .secondary)
+                Image(systemName: selectedProductIndex == vm.selectedProductIndex ? "button.programmable" : "circle")
+                    .foregroundStyle(selectedProductIndex == vm.selectedProductIndex ? .accent : .secondary)
                 VStack(alignment: .leading) {
                     Text(parameters?.subscriptionName ?? subscription.productId)
                     if let pricePerYear = parameters?.pricePerYear {
@@ -60,7 +59,7 @@ struct SubscriptionButton: View {
             .frame(height: 54)
             .clipShape(RoundedRectangle(cornerRadius: 14))
             .overlay {
-                RoundedRectangle(cornerRadius: 14).stroke(isChosen ? .accent : .clear)
+                RoundedRectangle(cornerRadius: 14).stroke(selectedProductIndex == vm.selectedProductIndex ? .accent : .clear)
             }
             .padding(1)
         }

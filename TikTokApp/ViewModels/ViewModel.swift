@@ -39,7 +39,7 @@ class ViewModel: ObservableObject {
     @Published var products: [ApphudProduct] = []
     @Published var proSubscriptionBought = false
     @Published var showPaywall: Bool = false
-    private(set) var selectedProductIndex = 0
+    @Published var selectedProductIndex = 0
 
     // Navigation
     @Published var tabSelection = 1
