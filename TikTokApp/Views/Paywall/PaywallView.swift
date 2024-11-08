@@ -31,7 +31,8 @@ struct PaywallView: View {
                     .font(.footnote)
                     .padding(.top)
                 if !vm.disableContinueButton() {
-                    CapsuleButton(leftIcon: "", title: "Continue", rightIcon: "arrow.forward", backgroundColor: vm.disableContinueButton() ? .gray : nil ,action: {
+                    CapsuleButton(leftIcon: "", title: "Continue", rightIcon: "arrow.forward" ,action: {
+//                        firstRun = false
                         vm.makePurchase()
                     })
                     .padding(.vertical)

@@ -11,6 +11,14 @@ import ApphudSDK
 import StoreKit
 import AdSupport
 
+extension ApphudPurchaseResult {
+    var success: Bool {
+        subscription?.isActive() ?? false ||
+            nonRenewingPurchase?.isActive() ?? false ||
+            (Apphud.isSandbox() && transaction?.transactionState == .purchased)
+    }
+}
+
 enum ApphudPlacement {
 //    case settings
 //    case myProjects
@@ -30,16 +38,18 @@ enum ApphudPlacement {
 }
 
 class ViewModel: ObservableObject {
+    
+    @AppStorage("firstRun") var firstRun = true
 
-    @AppStorage("firstLaunch") var firstLaunch = true
-
-    // Paywall
+    // Apphud
     private var currentPlacement: ApphudPlacement = .test
     private var currentPaywall: ApphudPaywall?
     @Published var products: [ApphudProduct] = []
+    @Published var selectedProductIndex = 0
+
+    // Paywall
     @Published var proSubscriptionBought = false
     @Published var showPaywall: Bool = false
-    @Published var selectedProductIndex = 0
 
     // Navigation
     @Published var tabSelection = 1
@@ -127,23 +137,42 @@ class ViewModel: ObservableObject {
         guard let selectedProduct = products[safe: selectedProductIndex] else { return }
         Apphud.purchase(selectedProduct) {result in
             if let error = result.error {
+                DispatchQueue.main.async {
+                    self.firstRun = false
+                }
                 print("Ошибка выполнения Apphud.purchase")
                 debugPrint(error.localizedDescription)
             }
             if let subscription = result.subscription, subscription.isActive() {
                 self.proSubscriptionBought = true
                 self.showPaywall = false
+                DispatchQueue.main.async {
+                    self.firstRun = false
+                }
             } else if let purchase = result.nonRenewingPurchase, purchase.isActive() {
                 self.proSubscriptionBought = true
                 self.showPaywall = false
+                DispatchQueue.main.async {
+                    self.firstRun = false
+                }
             } else {
                 if Apphud.hasActiveSubscription() {
                     self.proSubscriptionBought = true
                     self.showPaywall = false
+                    DispatchQueue.main.async {
+                        self.firstRun = false
+                    }
                 }
             }
         }
     }
+
+    func func1() {
+        if Apphud.hasPremiumAccess() {
+            // проверка на любую активную покупку
+        }
+    }
+
 
     @MainActor func restorePurchase() {
         Apphud.restorePurchases {subscriptions, _, error in
