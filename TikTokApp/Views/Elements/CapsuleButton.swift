@@ -11,6 +11,7 @@ struct CapsuleButton: View {
     var leftIcon: String?
     var title: String?
     var rightIcon: String?
+    var backgroundColor: Color?
     let action: () -> Void
     
     var body: some View {
@@ -32,7 +33,7 @@ struct CapsuleButton: View {
             .frame(maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 14)
-                    .foregroundStyle(.red)
+                    .foregroundStyle(backgroundColor ?? .red)
             )
         }
     }

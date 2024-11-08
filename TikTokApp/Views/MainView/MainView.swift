@@ -23,14 +23,12 @@ struct MainView: View {
             ZStack {
                 BackgroundMainView()
                 if vm.showReviewRequest {
-                Color.clear
-                            .onAppear {
-
-                                    requestReview()
-                                    firstRun = false
-                                vm.showReviewRequest = false
-                                }
-                            }
+                    Color.clear
+                        .onAppear {
+                            requestReview()
+                            vm.showReviewRequest = false
+                        }
+                }
 
 
                 VStack {

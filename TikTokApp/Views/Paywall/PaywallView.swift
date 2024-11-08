@@ -10,8 +10,10 @@ import ApphudSDK
 
 struct PaywallView: View {
     @EnvironmentObject var vm: ViewModel
+    @AppStorage("firstRun") var firstRun = true
     @State var showCloseButton: Bool = false
-   
+
+
 
     var body: some View {
         ZStack {
@@ -28,11 +30,14 @@ struct PaywallView: View {
                 Label("Cancel anytime", systemImage: "clock.arrow.circlepath")
                     .font(.footnote)
                     .padding(.top)
-                CapsuleButton(leftIcon: "", title: "Continue", rightIcon: "arrow.forward", action: {
-    //                vm.makePurchase(product: vm.chosenSubscription)
-                })
+                if !vm.disableContinueButton() {
+                    CapsuleButton(leftIcon: "", title: "Continue", rightIcon: "arrow.forward", backgroundColor: vm.disableContinueButton() ? .gray : nil ,action: {
+                        vm.makePurchase()
+                    })
+                    .padding(.vertical)
+                }
 
-            .padding(.vertical)
+
                 PrivacyPolicyLinks()
             }
             .padding(.horizontal)

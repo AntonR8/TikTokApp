@@ -15,9 +15,7 @@ struct SettingsPurchasesView: View {
         Section(header: Text("Purchases")) {
             SettingsButton(image: "crown", title: "Upgrade plan", action: { vm.showPaywall = true }, description: nil)
             SettingsButton(image: "arrow.counterclockwise", title: "Restore purchases", action: {
-                Task {
-                    await Apphud.restorePurchases()
-                }
+                vm.restorePurchase()
             }, description: nil)
         }
         .textCase(nil)

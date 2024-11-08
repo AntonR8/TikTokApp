@@ -9,6 +9,8 @@ import SwiftUI
 import ApphudSDK
 
 struct PrivacyPolicyLinks: View {
+    @EnvironmentObject var vm: ViewModel
+    
     let contactURL = URL(string: "https://www.termsfeed.com/live/bbc6cbdc-1b4f-463c-9d61-dd3acb21a3b9")!
     var body: some View {
         HStack {
@@ -16,9 +18,7 @@ struct PrivacyPolicyLinks: View {
                     .foregroundStyle(.secondary)
                 Spacer()
                 Button("Restore Purchases", action:  {
-                    Task {
-                        await Apphud.restorePurchases()
-                    }
+                    vm.restorePurchase()
                 })
                 .foregroundStyle(.secondary)
                 Spacer()
@@ -31,4 +31,5 @@ struct PrivacyPolicyLinks: View {
 
 #Preview {
     PrivacyPolicyLinks()
+        .environmentObject(ViewModel())
 }

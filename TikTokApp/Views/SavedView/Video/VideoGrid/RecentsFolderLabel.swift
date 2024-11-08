@@ -59,8 +59,10 @@ struct RecentsFolderLabel: View {
                                             } else {
                                                 ProgressView()
                                                     .onAppear {
-                                                        vm.savedViewSelection = "Music"
-                                                        vm.savedViewSelection = "Videos"
+                                                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                                                            vm.savedViewSelection = "Music"
+                                                            vm.savedViewSelection = "Videos"
+                                                        }
                                                     }
                                             }
                                         }

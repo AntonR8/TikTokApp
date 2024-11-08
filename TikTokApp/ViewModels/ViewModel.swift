@@ -11,16 +11,35 @@ import ApphudSDK
 import StoreKit
 import AdSupport
 
+enum ApphudPlacement {
+//    case settings
+//    case myProjects
+//    case onboarding
+//    case luboyDrugoy
+    case test
+
+    var placementIdentifier: String {
+        switch self {
+//        case .settings: "settings"
+//        case .myProjects: "my_projects"
+//        case .onboarding: "onboarding"
+//        case .luboyDrugoy: "tvoe nazvanie id kak v apphud"
+        case .test: "test"
+        }
+    }
+}
+
 class ViewModel: ObservableObject {
 
     @AppStorage("firstLaunch") var firstLaunch = true
 
     // Paywall
+    private var currentPlacement: ApphudPlacement = .test
+    private var currentPaywall: ApphudPaywall?
     @Published var products: [ApphudProduct] = []
-    @Published var chosenSubscription: ApphudProduct?
     @Published var proSubscriptionBought = false
     @Published var showPaywall: Bool = false
-    @Published var firstLaunchPaywall = true
+    private(set) var selectedProductIndex = 0
 
     // Navigation
     @Published var tabSelection = 1
@@ -59,7 +78,7 @@ class ViewModel: ObservableObject {
 
         Task {
             await Apphud.start(apiKey: "app_Lq3Eoit1CwyroaFcfpW2RyHXdekMfF")
-            await loadProducts()
+            await loadProducts(for: currentPlacement)
         }
 
         self.proSubscriptionBought = Apphud.hasActiveSubscription()
@@ -74,19 +93,19 @@ class ViewModel: ObservableObject {
     // MARK: - Functions:
 
     // Paywall
-    func loadProducts() async {
-        async let loadedPlacement = await Apphud.placement("test")
-        let myPlacement = await loadedPlacement
+    @MainActor private func loadProducts(for placement: ApphudPlacement) async {
+        Apphud.fetchPlacements { placements, apphudError in
+            guard let actualPlacement = placements.first(where: { $0.identifier == placement.placementIdentifier })
+            else { return }
 
-        await MainActor.run {
-            self.products = myPlacement?.paywall?.products ?? []
-            if products.count > 2 {
-                self.chosenSubscription = products[1]
-                print("По умолчанию задан продукт: \(chosenSubscription?.name ?? "не задан")")
-            } else { print(products.count) }
+            guard let actualPaywall = actualPlacement.paywall else { return }
+            self.currentPaywall = actualPaywall
+
+            self.products = actualPaywall.products
+            print("products successfully fetched: \(self.products.map { $0.name })")
         }
-        print("products successfully fetched: \(products.map { $0.name })")
     }
+
 
     func fetchIDFA() {
             if #available(iOS 14.5, *) {
@@ -100,18 +119,68 @@ class ViewModel: ObservableObject {
             }
         }
 
-    func makePurchase(product: ApphudProduct?) {
-        Task {
-            if let product {
-                await Apphud.purchase(product) { result in
-                    if result.success {
-                        print("Purchase successful")
-                        self.proSubscriptionBought = true
-                    }
+    func updatedSelectedProductIndex(_ index: Int) {
+        selectedProductIndex = index
+    }
+
+    @MainActor func makePurchase() {
+        guard let selectedProduct = products[safe: selectedProductIndex] else { return }
+        Apphud.purchase(selectedProduct) {result in
+            if let error = result.error {
+                print("Ошибка выполнения Apphud.purchase")
+                debugPrint(error.localizedDescription)
+            }
+            if let subscription = result.subscription, subscription.isActive() {
+                self.proSubscriptionBought = true
+                self.showPaywall = false
+            } else if let purchase = result.nonRenewingPurchase, purchase.isActive() {
+                self.proSubscriptionBought = true
+                self.showPaywall = false
+            } else {
+                if Apphud.hasActiveSubscription() {
+                    self.proSubscriptionBought = true
+                    self.showPaywall = false
                 }
             }
         }
     }
+
+    @MainActor func restorePurchase() {
+        Apphud.restorePurchases {subscriptions, _, error in
+            if let error = error {
+                print("Ошибка восставноления подписки")
+                debugPrint(error.localizedDescription)
+                // подписка не активка либо другая ошибка - обработка ошибку
+            }
+            if subscriptions?.first?.isActive() ?? false {
+                self.showPaywall = false
+                return
+            }
+
+            if Apphud.hasActiveSubscription() {
+                self.showPaywall = false
+            }
+        }
+    }
+
+    func returnSubscriptionViewParameters(subscription: ApphudProduct) -> (subscriptionName: String, pricePerYear: String?, bestOffer: Bool, pricePerPeriod: String, period: String)? {
+        switch subscription.productId {
+        case "yearly_19.99_no_trial": (subscriptionName: "Annual", pricePerYear: "Just $0.42 per week", bestOffer: true, pricePerPeriod: "$19.99", period: "per year")
+        case "weekly_4.99_notrial": (subscriptionName: "Weekly", pricePerYear: nil, bestOffer: false, pricePerPeriod: "$4.99", period: "per week")
+        default: nil
+        }
+    }
+
+
+    func disableContinueButton() -> Bool {
+        guard
+            !products.isEmpty,
+            let _ = products[safe: selectedProductIndex]
+        else { return true }
+
+        return false
+    }
+
 
     // interface
     func returnNavigationTitle() -> String {

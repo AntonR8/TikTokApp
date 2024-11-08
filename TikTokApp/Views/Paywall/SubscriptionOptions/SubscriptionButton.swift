@@ -11,54 +11,60 @@ import StoreKit
 
 struct SubscriptionButton: View {
     @EnvironmentObject var vm: ViewModel
-    @Binding var isChosen: Bool
-    let subscriptionName: String
-    let pricePerYear: String?
-    let bestOffer: Bool
-    var pricePerPeriod: String
-    let period: String
-    var subscription: ApphudProduct?
+
+    let selectedProductIndex: Int
+    let subscription: ApphudProduct
+
+
+    var parameters: (subscriptionName: String, pricePerYear: String?, bestOffer: Bool, pricePerPeriod: String, period: String)? { vm.returnSubscriptionViewParameters(subscription: subscription)}
+
+    var isChosen: Bool { selectedProductIndex == vm.selectedProductIndex}
+
 
     var body: some View {
-
-        HStack() {
-            Image(systemName: isChosen ? "button.programmable" : "circle")
-                .foregroundStyle(isChosen ? .accent : .secondary)
-            VStack(alignment: .leading) {
-                Text(subscriptionName)
-                if let pricePerYear {
-                    Text(pricePerYear)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+        Button {
+            vm.updatedSelectedProductIndex(selectedProductIndex)
+        } label: {
+            HStack() {
+                Image(systemName: isChosen ? "button.programmable" : "circle")
+                    .foregroundStyle(isChosen ? .accent : .secondary)
+                VStack(alignment: .leading) {
+                    Text(parameters?.subscriptionName ?? subscription.productId)
+                    if let pricePerYear = parameters?.pricePerYear {
+                        Text(pricePerYear)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
                 }
-            }
-            .foregroundStyle(.white)
-            Spacer()
-            VStack {
-                if bestOffer {
-                    BestOfferBadgeView()
-                }
+                .foregroundStyle(.white)
                 Spacer()
+                VStack {
+                    if let parameters, parameters.bestOffer {
+                        BestOfferBadgeView()
+                    }
+                    Spacer()
+                }
+                VStack(alignment: .trailing) {
+                    Text(parameters?.pricePerPeriod ?? "⚠️")
+                        .font(.headline)
+                    Text(parameters?.period ?? "")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                }
+                .foregroundStyle(.white)
             }
-            VStack(alignment: .trailing) {
-                Text(pricePerPeriod)
-                    .font(.headline)
-                Text(period)
-                    .foregroundStyle(.secondary)
-                    .font(.caption)
+
+            .padding(8)
+            .padding(.horizontal, 8)
+            .background(.gray.opacity(0.3))
+            .frame(height: 54)
+            .clipShape(RoundedRectangle(cornerRadius: 14))
+            .overlay {
+                RoundedRectangle(cornerRadius: 14).stroke(isChosen ? .accent : .clear)
             }
-            .foregroundStyle(.white)
+            .padding(1)
         }
 
-        .padding(8)
-        .padding(.horizontal, 8)
-        .background(.gray.opacity(0.3))
-        .frame(height: 54)
-        .clipShape(RoundedRectangle(cornerRadius: 14))
-        .overlay {
-            RoundedRectangle(cornerRadius: 14).stroke(isChosen ? .accent : .clear)
-        }
-        .padding(1)
     }
 }
 
