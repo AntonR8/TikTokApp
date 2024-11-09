@@ -106,7 +106,11 @@ class ViewModel: ObservableObject {
     @MainActor private func loadProducts(for placement: ApphudPlacement) async {
         Apphud.fetchPlacements { placements, apphudError in
             guard let actualPlacement = placements.first(where: { $0.identifier == placement.placementIdentifier })
-            else { return }
+            else {
+                if let apphudError {
+                    print(apphudError.localizedDescription)
+                }
+                return }
 
             guard let actualPaywall = actualPlacement.paywall else { return }
             self.currentPaywall = actualPaywall
@@ -194,8 +198,8 @@ class ViewModel: ObservableObject {
 
     func returnSubscriptionViewParameters(subscription: ApphudProduct) -> (subscriptionName: String, pricePerYear: String?, bestOffer: Bool, pricePerPeriod: String, period: String)? {
         switch subscription.productId {
-        case "yearly_19.99_no_trial": (subscriptionName: "Annual", pricePerYear: "Just $0.42 per week", bestOffer: true, pricePerPeriod: "$19.99", period: "per year")
-        case "weekly_4.99_notrial": (subscriptionName: "Weekly", pricePerYear: nil, bestOffer: false, pricePerPeriod: "$4.99", period: "per week")
+        case "yearly": (subscriptionName: "Annual", pricePerYear: "Just $0.42 per week", bestOffer: true, pricePerPeriod: "$19.99", period: "per year")
+        case "monthle": (subscriptionName: "Weekly", pricePerYear: nil, bestOffer: false, pricePerPeriod: "$4.99", period: "per week")
         default: nil
         }
     }
