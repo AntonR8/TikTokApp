@@ -25,7 +25,7 @@ struct VideoFolderView: View {
                 .navigationTitle(navTitle ?? folderName)
             if let clips = folder?.clips {
                 if clips.isEmpty {
-                    NoVideosView(folderName: folderName)
+                    NoVideosView(folderName: folderName, action: dismiss)
                 } else {
                     ScrollView {
                         LazyVGrid(columns: [GridItem(), GridItem()], spacing: 8,content: {
@@ -38,7 +38,7 @@ struct VideoFolderView: View {
                     .padding(16)
                 }
             } else {
-                NoVideosView(folderName: folderName)
+                NoVideosView(folderName: folderName, action: dismiss)
             }
 
 

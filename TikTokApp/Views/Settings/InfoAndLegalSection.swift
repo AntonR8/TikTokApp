@@ -14,9 +14,16 @@ struct InfoAndLegalSection: View {
 
     var body: some View {
         Section(header: Text("Info & legal")) {
-            SettingsShareLink(shareLink: contactURL, image: "envelope", title: "Contact us")
-            SettingsShareLink(shareLink: privacyPolicy, image: "person.badge.shield.checkmark", title: "Privacy Policy")
-            SettingsShareLink(shareLink: termsOfUseURL, image: "doc.text", title: "Usage Policy")
+            Link(destination: contactURL) {
+                SettingsElementLabel(image: "envelope", title: "Contact us")
+            }
+            Link(destination: privacyPolicy) {
+                SettingsElementLabel(image: "person.badge.shield.checkmark", title: "Privacy Policy")
+            }
+            Link(destination: termsOfUseURL) {
+                SettingsElementLabel(image: "doc.text", title: "Usage Policy")
+            }
+
             AppVersionView()
                 .listRowBackground(Color.clear)
         }
@@ -28,5 +35,7 @@ struct InfoAndLegalSection: View {
     NavigationStack {
         SettingsView()
             .environmentObject(ViewModel())
+            .environmentObject(VideosManager())
+            .environmentObject(MusicManager())
     }
 }

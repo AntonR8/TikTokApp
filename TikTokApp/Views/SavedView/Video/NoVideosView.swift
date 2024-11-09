@@ -10,6 +10,7 @@ import SwiftUI
 struct NoVideosView: View {
     @EnvironmentObject var vm: ViewModel
     let folderName: String
+    var action: DismissAction
 
     var icon: String { folderName == "Recents" ? "clock.arrow.circlepath" : "folder"}
     var title: String { folderName == "Recents" ? "No recent videos" : "No videos"}
@@ -34,6 +35,7 @@ struct NoVideosView: View {
             if folderName == "Recents" {
                 CapsuleButton(title: "Find", rightIcon: "arrow.forward") {
                     vm.tabSelection = 1
+                    action()
                 }
                 .frame(width: 200)
                 .padding()
@@ -43,7 +45,7 @@ struct NoVideosView: View {
     }
 }
 
-#Preview {
-    NoVideosView(folderName: "Recents")
-        .environmentObject(ViewModel())
-}
+//#Preview {
+//    NoVideosView(folderName: "Recents", action: {})
+//        .environmentObject(ViewModel())
+//}

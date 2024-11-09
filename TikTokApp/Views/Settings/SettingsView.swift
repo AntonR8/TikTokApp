@@ -29,5 +29,6 @@ struct SettingsView: View {
     NavigationStack {
         SettingsView()
             .environmentObject(ViewModel())
+            .environmentObject(VideosManager())
     }
 }
