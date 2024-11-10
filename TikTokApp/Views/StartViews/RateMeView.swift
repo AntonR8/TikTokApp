@@ -31,7 +31,7 @@ struct RateMeView: View {
                 .padding()
             }
             Spacer()
-            Image("RateMe")
+            Image("logo1")
                 .resizable()
                 .scaledToFit()
                 .padding(.bottom, -16)

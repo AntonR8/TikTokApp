@@ -82,6 +82,7 @@
 		127275242CC7912900800BA3 /* ClipInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275232CC7911A00800BA3 /* ClipInfoModel.swift */; };
 		127275272CC7BD5B00800BA3 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275262CC7BD5B00800BA3 /* DownloadManager.swift */; };
 		127275472CC7DE4D00800BA3 /* WrongLinkAllert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127275462CC7DE4D00800BA3 /* WrongLinkAllert.swift */; };
+		12A58D1D2CE0A0D100DFCD4C /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A58D1C2CE0A0D100DFCD4C /* SwiftUIView.swift */; };
 		12C177C42CCB8846002346D5 /* TrendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C177C32CCB8839002346D5 /* TrendsModel.swift */; };
 		12C177C62CCB9D4D002346D5 /* SeeAllButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C177C52CCB9D4D002346D5 /* SeeAllButton.swift */; };
 		12C90DB52CC0EEE700CEA55B /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C90DB42CC0EEE700CEA55B /* Instruction.swift */; };
@@ -185,6 +186,7 @@
 		127275232CC7911A00800BA3 /* ClipInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipInfoModel.swift; sourceTree = "<group>"; };
 		127275262CC7BD5B00800BA3 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		127275462CC7DE4D00800BA3 /* WrongLinkAllert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongLinkAllert.swift; sourceTree = "<group>"; };
+		12A58D1C2CE0A0D100DFCD4C /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		12C177C32CCB8839002346D5 /* TrendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsModel.swift; sourceTree = "<group>"; };
 		12C177C52CCB9D4D002346D5 /* SeeAllButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllButton.swift; sourceTree = "<group>"; };
 		12C90DB42CC0EEE700CEA55B /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 				120B70662CBFA12B004C531B /* LaunchScreen.swift */,
 				120B70652CBFA12B004C531B /* MainTabView.swift */,
 				120B70892CBFD993004C531B /* RateMeView.swift */,
+				12A58D1C2CE0A0D100DFCD4C /* SwiftUIView.swift */,
 			);
 			path = StartViews;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				1237D5002CCFC5810060DC5A /* ShowInstructionsButton.swift in Sources */,
 				12500D3A2CBEA2D40030C1B5 /* TikTokAppApp.swift in Sources */,
 				12500D422CBEA3B90030C1B5 /* SettingsView.swift in Sources */,
+				12A58D1D2CE0A0D100DFCD4C /* SwiftUIView.swift in Sources */,
 				12C177C42CCB8846002346D5 /* TrendsModel.swift in Sources */,
 				120B708E2CBFDFE6004C531B /* LinkField.swift in Sources */,
 				12500D432CBEA3B90030C1B5 /* SettingsElementLabel.swift in Sources */,
@@ -871,7 +875,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TikTokApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "TikClip - Video Save";
+				INFOPLIST_KEY_CFBundleDisplayName = SaveTik;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires read and write access to the photo library.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library";
@@ -891,7 +895,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bai.tokktokk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bai.tikktokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -919,7 +923,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TikTokApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "TikClip - Video Save";
+				INFOPLIST_KEY_CFBundleDisplayName = SaveTik;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires read and write access to the photo library.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library";
@@ -939,7 +943,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bai.tokktokk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bai.tikktokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;

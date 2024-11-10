@@ -11,7 +11,8 @@ struct PreviewNotifications: View {
     @EnvironmentObject var vm: ViewModel
     @EnvironmentObject var musicManager: MusicManager
     @EnvironmentObject var videosManager: VideosManager
-    
+    @Environment(\.requestReview) var requestReview
+
     var body: some View {
         VStack {
             if videosManager.showVideoSaved {
@@ -19,6 +20,7 @@ struct PreviewNotifications: View {
                     .onAppear{
                         DispatchQueue.main.asyncAfter(deadline: .now()+3) {
                             videosManager.showVideoSaved = false
+                            requestReview()
                         }
                     }
             }
