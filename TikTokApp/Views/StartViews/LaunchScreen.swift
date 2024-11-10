@@ -63,10 +63,10 @@ struct LaunchScreen: View {
                 }
 
             if movement {
-                Image("logo1")
+                Image("appicon")
                     .resizable()
                     .frame(width: size, height: size)
-                    .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
+                    .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)) 
                     .shadow(color: .black, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 5, y: 5)
                     .onAppear{
                         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
