@@ -49,7 +49,7 @@ struct SettingsActionsView: View {
         Section(header: Text("Actions")) {
             HStack {
                 SettingsElementLabel(image: "bell.badge", title: "Notifications", showChevron: true)
-                Spacer()
+                Spacer(minLength: 1)
                 Toggle("", isOn: $notofications)
                     .toggleStyle(SwitchToggleStyle(tint: .accent))
                     .onChange(of: notofications) {

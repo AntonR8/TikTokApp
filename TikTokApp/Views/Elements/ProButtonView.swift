@@ -1,10 +1,3 @@
-//
-//  ProButtonView.swift
-//  AIImageGenerator
-//
-//  Created by Антон Разгуляев on 12.09.2024.
-//
-
 import SwiftUI
 
 struct ProButtonView: View {
@@ -25,7 +18,13 @@ struct ProButtonView: View {
         .padding(.horizontal, title != nil ? 0 : -2)
         .foregroundStyle(.white)
         .background(
-            Capsule()
+            ZStack {
+                if let title {
+                    RoundedRectangle(cornerRadius: 8)
+                } else {
+                    Capsule()
+                }
+            }
                 .foregroundStyle(Color.accentColor.gradient)
         )
     }

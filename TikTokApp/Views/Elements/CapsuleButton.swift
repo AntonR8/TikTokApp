@@ -12,6 +12,7 @@ struct CapsuleButton: View {
     var title: String?
     var rightIcon: String?
     var backgroundColor: Color?
+    var foregroundColor: Color?
     let action: () -> Void
     
     var body: some View {
@@ -27,18 +28,19 @@ struct CapsuleButton: View {
                     Image(systemName: rightIcon)
                 }
             }
-            .foregroundStyle(.white)
-            .padding(14)
-            .padding(.horizontal)
+            .foregroundStyle(foregroundColor ?? .white)
             .frame(maxWidth: .infinity)
+            .frame(height:  44)
             .background(
                 RoundedRectangle(cornerRadius: 14)
-                    .foregroundStyle(backgroundColor ?? .red)
+                    .stroke(.accent, lineWidth: 1)
+                    .fill(backgroundColor ?? .accent)
             )
+            .padding(1)
         }
     }
 }
 
 #Preview {
-    CapsuleButton(leftIcon: "photo.badge.plus", title: "Add Photo", rightIcon: "", action: {})
+    CapsuleButton(leftIcon: "photo.badge.plus", title: "Add Photo", action: {})
 }

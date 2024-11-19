@@ -28,6 +28,7 @@ struct SettingsElementLabel: View {
                 .frame(width: 25)
             Text(title)
                 .padding(.horizontal, 8)
+                .lineLimit(1)
             Spacer()
             Text(description)
             if !showChevron {

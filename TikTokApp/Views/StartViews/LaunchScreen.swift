@@ -11,48 +11,12 @@ import StoreKit
 
 struct LaunchScreen: View {
     @EnvironmentObject var vm: ViewModel
-    @AppStorage("firstRun") var firstRun = true
     @State var movement = false
     @State var size: CGFloat = 50
 
-    
-
-    func allowATT() {
-        ATTrackingManager.requestTrackingAuthorization { status in
-            switch status {
-            case .authorized:
-                print("Tracking Authorized")
-                DispatchQueue.main.async{
-                    vm.launchScreenOpacity = 0
-                }
-            case .denied:
-                print("Tracking Denied")
-                DispatchQueue.main.async{
-                vm.launchScreenOpacity = 0
-                }
-            case .notDetermined:
-                print("Tracking Not Determined")
-                DispatchQueue.main.asyncAfter(deadline: .now()+10) {
-                    vm.launchScreenOpacity = 0
-                    }
-            case .restricted:
-                print("Tracking Restricted")
-                        DispatchQueue.main.async{
-                vm.launchScreenOpacity = 0
-                        }
-            @unknown default:
-                print("Tracking Unknown")
-                            DispatchQueue.main.async{
-                vm.launchScreenOpacity = 0
-                            }
-            }
-        }
-    }
-
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color.launchscreen1, Color.launchscreen2], startPoint: .bottom, endPoint: .top)
-                .ignoresSafeArea()
+            Color.black.ignoresSafeArea()
             Text("")
                 .onAppear{
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -76,11 +40,7 @@ struct LaunchScreen: View {
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now()+2) {
                             movement = false
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now()+4) {
-                            if firstRun {
-                                allowATT()
-                            }
+                            vm.launchScreenOpacity = 0
                         }
                     }
             }
@@ -93,6 +53,4 @@ struct LaunchScreen: View {
 #Preview {
     LaunchScreen()
         .environmentObject(ViewModel())
-        .environmentObject(VideosManager())
-        .environmentObject(MusicManager())
 }

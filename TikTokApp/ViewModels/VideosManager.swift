@@ -18,6 +18,11 @@ class VideosManager: ObservableObject {
     @Published var showAddedToFolder = false
     @Published var showVideoSaved = false
     @Published var showVideoNOTSaved = false
+    var savedVideosCounter = 0
+
+    var stopDate: Date? {
+        didSet { saveStopDate() }
+    }
 
     init () {
         let recents = VideoFolderModel(clips: [], name: "Recents")
@@ -29,12 +34,24 @@ class VideosManager: ObservableObject {
             let savedVideos = try? JSONDecoder().decode([VideoFolderModel].self, from: videosData)
         else { return }
         self.videos = savedVideos
+
+        guard
+            let stopDateData = UserDefaults.standard.data(forKey: "stopDate"),
+            let receivedStopDate = try? JSONDecoder().decode(Date.self, from: stopDateData)
+        else { return }
+        self.stopDate = receivedStopDate
     }
 
     // init:
     func saveVideos() {
         if let encodedData = try? JSONEncoder().encode(videos) {
             UserDefaults.standard.setValue(encodedData, forKey: "videos")
+        }
+    }
+
+    func saveStopDate() {
+        if let encodedData = try? JSONEncoder().encode(stopDate) {
+            UserDefaults.standard.setValue(encodedData, forKey: "stopDate")
         }
     }
 
@@ -135,6 +152,7 @@ class VideosManager: ObservableObject {
                 print("Видео успешно сохранено в Фотогалерею")
                 DispatchQueue.main.async{
                     self.showVideoSaved = true
+                    self.updateCounter()
                 }
             }
             if let error {
@@ -154,5 +172,27 @@ class VideosManager: ObservableObject {
             } else { print("Ошибка сохранения фото или видео в галлерею: - data отсутствует -") }
         }
     }
+
+    func freeSavingsRemain() -> Bool {
+        if let stopDate {
+            print("freeSavingsRemain: \(!Calendar.current.isDate(stopDate, inSameDayAs: .now))")
+           return !Calendar.current.isDate(stopDate, inSameDayAs: .now)
+        } else {
+            return true
+        }
+    }
+
+    func updateCounter() {
+        print("savedVideosCounter = \(savedVideosCounter)")
+        self.savedVideosCounter += 1
+        print("savedVideosCounter = \(savedVideosCounter)")
+        if savedVideosCounter >= 2 {
+            print("------------------------STOPDATE ЗАПИСАНА")
+            print("savedVideosCounter = \(savedVideosCounter)")
+            self.stopDate = .now
+            self.savedVideosCounter = 0
+        }
+    }
+
 
 }

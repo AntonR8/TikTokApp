@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct AppVersionView: View {
+
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+
     var body: some View {
-        HStack {
-            Spacer()
-            Text("App Version: 1.1.0")
-                .font(.caption)
-                .foregroundStyle(.secondary)
-               Spacer()
+        Section {
+            HStack {
+                Spacer()
+                Text("App Version: \(appVersion ?? "1.1")")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Spacer()
+            }
+            .padding(.top, -25) 
+            .listRowBackground(Color.clear)
         }
     }
 }

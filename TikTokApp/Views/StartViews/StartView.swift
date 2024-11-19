@@ -16,23 +16,11 @@ struct StartView: View {
         ZStack {
             MainTabView()
             if firstRun {
-                PaywallView()
-                    .onDisappear {
-                        vm.showReviewRequest = true
-                        }
+                    FirstRunLaunchScreen()
+            } else {
+                LaunchScreen()
+                    .opacity(vm.launchScreenOpacity)
             }
-            LaunchScreen()
-                .opacity(vm.launchScreenOpacity)
-                .onAppear{
-                    print("it is firstRun: \(firstRun)")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        withAnimation(.easeOut(duration: 1)) {
-                            if !firstRun {
-                                vm.launchScreenOpacity = 0
-                            }
-                        }
-                    }
-                }
         }
         .preferredColorScheme(.dark)
     }

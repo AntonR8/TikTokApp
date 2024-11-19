@@ -23,9 +23,6 @@ struct InfoAndLegalSection: View {
             Link(destination: termsOfUseURL) {
                 SettingsElementLabel(image: "doc.text", title: "Usage Policy")
             }
-
-            AppVersionView()
-                .listRowBackground(Color.clear)
         }
         .textCase(nil)
     }

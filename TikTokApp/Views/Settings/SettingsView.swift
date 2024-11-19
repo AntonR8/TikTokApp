@@ -19,7 +19,9 @@ struct SettingsView: View {
             SettingsActionsView()
             SupportUsSection()
             InfoAndLegalSection()
+            AppVersionView()
         }
+        .padding(.top, 1)
         .foregroundStyle(.primary)
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -30,5 +32,6 @@ struct SettingsView: View {
         SettingsView()
             .environmentObject(ViewModel())
             .environmentObject(VideosManager())
+            .environmentObject(MusicManager())
     }
 }

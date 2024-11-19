@@ -27,7 +27,7 @@ struct LinkFieldOverlay: View {
                     }
                     self.link = String(string)
                 }
-                .tint(.black.opacity(0.2))
+                .tint(.black.opacity(0.1))
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(.clear)
@@ -40,10 +40,13 @@ struct LinkFieldOverlay: View {
             }
 
         }
-        .padding(.horizontal)
+        .padding(.horizontal, 8)
     }
 }
 
 #Preview {
-    LinkFieldOverlay(link: .constant(""))
+    ZStack {
+        Color.gray
+        LinkFieldOverlay(link: .constant(""))
+    }
 }

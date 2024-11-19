@@ -24,7 +24,11 @@ struct PreView: View {
                 Menu(link: clipLink, info: clipInfo)
                     .padding(.bottom)
                 CapsuleButton(leftIcon: "crown", title: "Save HD", action: {
-                    videosManager.downloadAndSaveVideoToGallery(videoURL: vm.tikTokdownloadLink)
+                    if videosManager.freeSavingsRemain() {
+                        videosManager.downloadAndSaveVideoToGallery(videoURL: vm.tikTokdownloadLink)
+                    } else {
+                        vm.showPaywall = true
+                    }
                 })
             } else {
                 Text("Some problems, try again")
@@ -36,6 +40,17 @@ struct PreView: View {
         .padding(.horizontal)
         .navigationTitle("Preview")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            if !vm.proSubscriptionBought {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        vm.showPaywall = true
+                    } label: {
+                        ProButtonView()
+                    }
+                }
+            }
+        }
         .sheet(isPresented: $vm.showSelectFolders) {
             SelectFolder()
                 .presentationDetents([.medium])

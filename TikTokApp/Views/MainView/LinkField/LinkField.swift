@@ -16,12 +16,12 @@ struct LinkField: View {
             .padding(.leading, 30)
             .padding(.trailing, 30)
             .background(.white.opacity(0.2))
-            .clipShape(Capsule())
+            .clipShape(RoundedRectangle(cornerRadius: 14))
             .overlay {
                 LinkFieldOverlay(link: $link)
             }
             .overlay {
-                Capsule()
+                RoundedRectangle(cornerRadius: 14)
                     .stroke((link.isEmpty ? Color.secondary : Color.accent), lineWidth: link.isEmpty ? 0.3 : 1)
             }
             .padding(1)

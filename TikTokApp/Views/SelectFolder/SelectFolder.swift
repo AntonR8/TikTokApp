@@ -57,7 +57,7 @@ struct SelectFolder: View {
             .padding()
             FolderList(selectedFolder: $selectedFolder)
             HStack {
-                CapsuleEmptyButton(leftIcon: "plus", title: "New folder") {
+                CapsuleButton(leftIcon: "plus", title: "New folder", backgroundColor: .clear, foregroundColor: .accent) {
                     print("vm.selectedType = \(vm.selectedType)")
                     if vm.selectedType == "Videos" {
                         print("vm.showCreateVideosFolderAllert = true")

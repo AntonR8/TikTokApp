@@ -43,32 +43,7 @@ struct RecentsFolderLabel: View {
             .overlay {
                 LazyVGrid(columns: [GridItem(), GridItem()], spacing: 8, content: {
                     ForEach(0..<4) { number in
-                        RoundedRectangle(cornerRadius: imagecornerRadius)
-                            .fill(.gray.opacity(0.1))
-                            .frame(width: folderSize/2-16, height: folderSize/2-16)
-                            .overlay {
-                                if recentsFolderCount > number {
-                                    if let currentURL = URL(string: recentsFourclips[number].videoPreview) {
-                                        AsyncImage(url: currentURL) { response in
-                                            if let image = response.image {
-                                                image
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .frame(width: folderSize/2-16, height: folderSize/2-16)
-                                                    .clipShape(RoundedRectangle(cornerRadius: imagecornerRadius))
-                                            } else {
-                                                ProgressView()
-                                                    .onAppear {
-                                                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                                                            vm.savedViewSelection = "Music"
-                                                            vm.savedViewSelection = "Videos"
-                                                        }
-                                                    }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                        SmallRecentsFolderLabel(number: number, imagecornerRadius: imagecornerRadius, folderSize: folderSize, recentsFolderCount: recentsFolderCount, recentsFourclips: recentsFourclips)
                     }
 
                 })

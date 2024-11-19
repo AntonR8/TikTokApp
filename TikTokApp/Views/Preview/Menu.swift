@@ -28,6 +28,7 @@ struct Menu: View {
             } label: { MenuElement(icon: "bookmark", title: "Add...") }
 
             Button {
+                UIPasteboard.general.string = info.musicTitle
                 vm.showTrackNameCopied = true
             } label: { MenuElement(icon: "doc.on.doc", title: "Copy track name") }
             

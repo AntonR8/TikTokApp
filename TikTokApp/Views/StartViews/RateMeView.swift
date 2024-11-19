@@ -30,6 +30,7 @@ struct RateMeView: View {
                 })
                 .padding()
             }
+            //
             Spacer()
             Image("appicon")   
                 .resizable()
@@ -46,7 +47,7 @@ struct RateMeView: View {
                     requestReviewManually()
                 }
                 
-                CapsuleEmptyButton(title: "No, i don't") {
+                CapsuleButton(title: "No, i don't", backgroundColor: .clear, foregroundColor: .accent) {
                     vm.showRateMeView = false
                 }
             }
